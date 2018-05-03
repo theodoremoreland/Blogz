@@ -92,18 +92,19 @@ def signup():
      verify_error="")
 
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/')
 def index():
-    
-    user_id = request.args.get("id")
-    
-    if user_id:
-        users = User.query.filter_by(id=user_id).all()
-
-    else: 
         users = User.query.all()
 
-    return render_template('index.html', users_list=users)
+         
+        user_id = request.args.get("id")
+
+        if user_id:
+            blog = Blog.query_filter_by(author_id=user_id).all()
+        
+            return render_template("user.html", blogs=blog)
+
+        return render_template('index.html', users_list=users)
 
 
     
@@ -133,18 +134,27 @@ def logout():
     return redirect('/')
 
 
-@app.route('/blog', methods=['POST', 'GET'])
+@app.route('/blog')
 def userblog():
 
+ 
     blog_id = request.args.get("id")
+    user = request.args.get("user")
+
+    if user:
+       blog = Blog.query.filter_by(author_id=user).all()
     
+       return render_template("user.html", blogs=blog)
+
     if blog_id:
         blog = Blog.query.filter_by(id=blog_id).all()
 
-    else: 
+    else:
         blog = Blog.query.all()
 
-    return render_template('blog.html', blogs=blog)
+    return render_template("blog.html", blogs=blog)
+
+
 
 @app.route('/newpost', methods=['POST', 'GET'])
 def new_post():
