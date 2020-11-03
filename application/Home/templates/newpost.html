@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Create New Blog Entry</h1>
+
+    <table>
+        <form method='POST' id="create_new_blog_entry">
+                <tr>
+                <th>
+                <label for="title">Title</label>
+                </th>
+                </tr>
+            
+                <td>
+                <input type="text" name='title' />
+                </td>
+                </table>
+           
+            
+                <table>
+                <tr>
+                <th>
+                <label for="entry">Entry</label>
+                </th>
+                </tr>
+
+                <td>
+                <textarea name="entry" form="create_new_blog_entry" rows="5" cols="21"></textarea>
+                </td>
+                </table>
+            
+           
+
+
+            <table>
+            <th>
+            <input type="submit" value='Publish' />
+            </th>
+            </table>
+
+          
+        </form>   
+
+{% endblock %}
