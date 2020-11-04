@@ -9,6 +9,7 @@ auth = Blueprint(
     static_folder='static'
     )
 
+
 @auth.route('/login', methods=['POST', 'GET'])
 def login():
     if request.method == 'POST':
@@ -28,7 +29,9 @@ def login():
 
 @auth.route('/logout')
 def logout():
+    if 'username' not in session:
+        return redirect('/login')
     del session['username']
     flash("You are now logged out")
-
+    
     return redirect('/')

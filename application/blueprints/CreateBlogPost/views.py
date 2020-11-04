@@ -9,6 +9,13 @@ create_blog_post = Blueprint(
     static_folder='static'
     )
 
+
+@create_blog_post.before_request
+def require_login():
+    if 'username' not in session:
+        return redirect('/login')
+
+
 @create_blog_post.route('/create-blog-post', methods=['POST', 'GET'])
 def create_post():
     author = Users.query.filter_by(username=session['username']).first()
