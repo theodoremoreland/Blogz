@@ -5,7 +5,7 @@ from ...models import db, Users
 signup = Blueprint(
     'signup',
     __name__, 
-    template_folder='...templates',
+    template_folder='templates',
     static_folder='static'
     )
 

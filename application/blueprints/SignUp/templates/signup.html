@@ -1,37 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
+<h2>Signup</h2>
 
-<h1>Signup</h1>
+<form method='POST'>
+    <table>
+        <tbody>
+            <tr>
+                <td><label for="username">Username</label></td>
+                <td><input type="text" name="username" value>
+                <span class="error">{{username_error}}</span></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password</label></td>
+                <td><input type="password" name="password" value>
+                <span class="error">{{password_error}}</span></td>
+            </tr>
+            <tr>
+                <td><label for="verify-password">Verify Password</label></td>
+                <td><input type="password" name="verify-password" value>
+                <span class="error">{{verify_error}}</span></td>
+            </tr>
+        </tbody>
+    </table>  
 
-<table>
-    <tbody>
-     <form method='POST'>
-
-        <tr>
-        <td><label for="username">Username</label></td>
-        <td><input type="text" name="username" value>
-        <span class="error">{{username_error}}</span></td>
-        </tr>
-        
-
-        <tr>
-        <td><label for="password">Password</label></td>
-        <td><input type="password" name="password" value>
-        <span class="error">{{password_error}}</span></td>
-        </tr>
-
-        <tr>
-        <td><label for="verify-password">Verify Password</label></td>
-        <td><input type="password" name="verify-password" value>
-        <span class="error">{{verify_error}}</span></td>
-        </tr>
-
-        
-    </tbody>
-</table>
-        
-        <input type="submit" />
-    
-    </form>
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+</form>
 
 {% endblock %}   
