@@ -15,7 +15,7 @@ def render_home_page():
     user_id = request.args.get("id")
 
     if user_id:
-        blog = BlogPosts.query_filter_by(author_id=user_id).all()
-        return render_template("Blog/blog.html", blog=blog)
+        blog = BlogPosts.query.filter_by(author_id=user_id).all()
+        return redirect(f"/blog?user={user_id}")
 
     return render_template('home.html', users_list=users)

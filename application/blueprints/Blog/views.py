@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, session, flash
 
-from ...models import BlogPosts
+from ...models import BlogPosts, Users
 
 blog = Blueprint(
     'blog',
@@ -9,16 +9,20 @@ blog = Blueprint(
     static_folder='static'
     )
 
-@blog.route('/blog')
+@blog.route('/blog', methods=['GET'])
 def render_blog():
-    blog_id = request.args.get("id")
-    user = request.args.get("user")
+    user_id = request.args.get("user") # assigned when a user clicks on a link to a user profile
+    blog_post_id = request.args.get("blog_post_id") # assigned when clicking on link to specific post or after creating post
 
-    if user:
-       _blog = BlogPosts.query.filter_by(author_id=user).all()
-    elif blog_id:
-        _blog = BlogPosts.query.filter_by(id=blog_id).all()
+    if user_id:
+       user_blog = BlogPosts.query.filter_by(author_id=user_id).all()
+       username = Users.query.filter_by(id=user_id).first().username
+       return render_template("blog.html", blog=user_blog, header=f"{username}'s Blog ")
+    elif blog_post_id:
+        blog_post = BlogPosts.query.filter_by(id=blog_post_id).first()
+        return render_template('blog_post.html', blog_post=blog_post)
     else:
-        _blog = BlogPosts.query.all()
+        all_blog_posts = BlogPosts.query.all()
+        return render_template("blog.html", blog=all_blog_posts, header=f"All Blog Posts")
 
-    return render_template("blog.html", blog=_blog)
+    
