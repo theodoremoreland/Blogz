@@ -19,7 +19,7 @@ def require_login():
 @create_blog_post.route('/create-blog-post', methods=['POST', 'GET'])
 def create_post():
     author = Users.query.filter_by(username=session['username']).first()
-
+    
     if request.method == 'POST':
         entry = request.form['entry']
         title = request.form['title']
@@ -30,8 +30,7 @@ def create_post():
             blog_post = BlogPosts(title, entry, author)
             db.session.add(blog_post)
             db.session.commit()
-            blog_posts = BlogPosts.query.all()
-            blog_post_id = len(blog_posts)
+            blog_post_id = BlogPosts.query.filter_by(title=title, entry=entry).first().id
 
             return redirect("/blog?blog_post_id=" + str(blog_post_id))
     
