@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-    <h2 class="header">Log in</h2>
-    <p class="subheader">If you don't have an account, you may <a href="/signup">register</a> for one</p>
+<h2 class="header">Log in</h2>
+<p class="sub-header">If you don't have an account, you may <a href="/signup">register</a> for one</p>
 
-    <form action="/login" method="post">
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input name="username" class="form-control" type="text" value="{{ username }}">
-        </div>
+<form action="/login" method="POST">
+    <div class="row">
+        <label for="username">Username</label>
+        <input name="username" type="text" value="{{ username }}">
+    </div>
 
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input name="password" class="form-control" type="password">
-        </div>
+    <div class="row">
+        <label for="password">Password</label>
+        <input name="password" type="password">
+    </div>
 
-        <button type="submit" class="btn btn-primary">Log In</button>
-    </form>
+    <button class="primary" type="submit">Log In</button>
+</form>
 {% endblock %}

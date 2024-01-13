@@ -1,13 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">{{blog_post.title}}</h1>
-          <p class="lead">{{blog_post.entry}}</p>
-          <hr class="my-4">
-          <p>
-            written by <a class="card-link" href="/blog?user={{blog_post.author_id}}">{{blog_post.author.username}}</a>
-          </p>
-        </div>
-    </div>
+<div class="blog-post">
+  <h1 class="title">{{blog_post.title}}</h1>
+  <p class="entry">{{blog_post.entry}}</p>
+  <hr>
+  <p class="author">
+    written by <a href="/blog?user={{blog_post.author_id}}">{{blog_post.author.username}}</a>
+  </p>
+</div>
 {% endblock %}

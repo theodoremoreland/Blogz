@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
-{% block content %}
-    <h2 class="header">Bloggers</h2>
 
-    {% for users in users_list %}
-        <ul>
-            <li><a href="/blog?user={{users.id}}">{{users.username}}</a></li>
-        </ul>
-    {% endfor %}
+{% block content %}
+<h2>Bloggers</h2>
+
+{% for users in users_list %}
+<ul class="users">
+    <li><a class="user" href="/blog?user={{users.id}}">{{users.username}}</a></li>
+</ul>
+{% endfor %}
+
 {% endblock %}
