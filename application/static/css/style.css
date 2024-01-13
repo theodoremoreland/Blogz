@@ -1,25 +1,25 @@
-.header, .subheader {
-    text-align: center;
-} 
+/* ___________________ FONTS ____________________________ */
 
-form {
-    width: 35vw;
-    margin: 10px auto 30px auto;
+@font-face {
+  font-family: sarabun-bold;
+  src: url("../fonts/Sarabun/Sarabun-Bold.ttf");
 }
 
-.card {
-    margin: 30px auto 30px auto;
+@font-face {
+  font-family: sarabun-regular;
+  src: url("../fonts/Sarabun/Sarabun-Regular.ttf");
 }
 
+@font-face {
+  font-family: sarabun-light;
+  src: url("../fonts/Sarabun/Sarabun-Light.ttf");
+}
+
+@font-face {
+  font-family: sarabun-italic;
+  src: url("../fonts/Sarabun/Sarabun-Italic.ttf");
+}
 
 .error {
-    color: red;
-}
-
-.session1 {
-    padding-left: 55em;
-}
-
-.session2 {
-    padding-left: 1em;
+  color: red;
 }
