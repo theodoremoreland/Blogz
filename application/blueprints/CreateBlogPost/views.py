@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, session, flash
 
-from ...models import db, Users, BlogPosts
+from db.models import db, Users, BlogPosts
 
 create_blog_post = Blueprint(
     'create_blog_post',

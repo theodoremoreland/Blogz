@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, Flask, request, redirect
 
-from ...models import Users, BlogPosts
+from db.models import Users, BlogPosts
 
 home = Blueprint(
     'home',
