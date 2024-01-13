@@ -19,10 +19,8 @@ _This was originally a homework assignment for LaunchCode's Lc101 (2018)_
 
 Whether you are running the app directly on a Windows OS or indirectly via Docker, there are a few things you need to do in order to setup the application:
 
-    You need your own PostgreSQL database instance.
-
-    You need to create a folder named `instance` in the `application` folder. Then create a file called `config.cfg` in `application/instance/` mimicking the template provided in `application/instance_example/config.cfg.example` wherein the empty strings are replaced with values relating to your instance's secret key and PostgreSQL URI.
-
+- You need your own PostgreSQL database instance.
+- You need to create a folder named `instance` in the `application` folder. Then create a file called `config.cfg` in `application/instance/` mimicking the template provided in `application/instance_example/config.cfg.example` wherein the empty strings are replaced with values relating to your instance's secret key and PostgreSQL URI.
 - If you are trying to run this application directly on a Windows OS, you will need to install `Python 3.11`.
 - Otherwise, you will need to install Docker so you can run the application through Docker.
 
