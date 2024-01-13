@@ -12,19 +12,19 @@ from blueprints.Home.views import home
 from blueprints.SignUp.views import signup
 
 
-app = Flask(__name__, instance_relative_config=True)
-app.config.from_pyfile("config.cfg")
-app.config.from_pyfile("../config.py")
-app.register_blueprint(auth)
-app.register_blueprint(blog)
-app.register_blueprint(create_blog_post)
-app.register_blueprint(home)
-app.register_blueprint(signup)
+application = Flask(__name__, instance_relative_config=True)
+application.config.from_pyfile("config.cfg")
+application.config.from_pyfile("../config.py")
+application.register_blueprint(auth)
+application.register_blueprint(blog)
+application.register_blueprint(create_blog_post)
+application.register_blueprint(home)
+application.register_blueprint(signup)
 
-db.init_app(app)
+db.init_app(application)
 
-with app.app_context():
+with application.app_context():
     db.create_all()
 
 if __name__ == "__main__":
-    app.run()
+    application.run(host="0.0.0.0", port=5000)
