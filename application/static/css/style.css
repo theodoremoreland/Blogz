@@ -20,6 +20,16 @@
   src: url("../fonts/Sarabun/Sarabun-Italic.ttf");
 }
 
+/* ------------------- VARIABLES ------------------- */
+
+:root {
+  --primary-color: rgb(14, 17, 40);
+  --secondary-color: rgb(0, 171, 245);
+  --tertiary-color: rgb(219, 222, 227);
+  --quaternary-color: rgb(255, 95, 104);
+  --quinary-color: #18181c;
+}
+
 html {
   height: 100%;
   width: 100%;
