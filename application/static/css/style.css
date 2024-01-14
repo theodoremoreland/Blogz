@@ -20,6 +20,13 @@
   src: url("../fonts/Sarabun/Sarabun-Italic.ttf");
 }
 
+html {
+  height: 100%;
+  width: 100%;
+  font-family: sarabun-regular;
+  font-size: 16px;
+}
+
 .error {
   color: red;
 }
