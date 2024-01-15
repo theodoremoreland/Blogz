@@ -6,6 +6,14 @@ _This was originally a homework assignment for LaunchCode's Lc101 (2018)_
 
 <img src="presentation/thumbnail.png" width="700">
 
+# Table of contents
+
+- [Technologies Used](#technologies-used)
+- [How to run locally](#how-to-run-locally)
+  - [Run on Windows](#run-on-windows)
+  - [Run on Docker](#run-on-docker)
+- [Screenshots](#screenshots)
+
 ## Technologies Used
 
 - Python
