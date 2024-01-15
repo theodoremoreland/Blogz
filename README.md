@@ -1,6 +1,6 @@
 # Blogz
 
-A Python (Flask) web application where multiple users can create their own Blog (updated to use Flask blueprints and Bootstrap CSS). See below for a preview of the application.
+A Python (Flask) web application where multiple users can create their own Blog (updated to use Flask blueprints). See below for a preview of the application.
 
 _This was originally a homework assignment for LaunchCode's Lc101 (2018)_
 
@@ -13,7 +13,6 @@ _This was originally a homework assignment for LaunchCode's Lc101 (2018)_
 - Flask_sqlalchemy
 - PostgreSQL
 - HTML/CSS
-- Bootstrap
 
 # How to run locally
 
