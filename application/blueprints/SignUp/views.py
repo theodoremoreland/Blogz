@@ -1,57 +1,83 @@
 from flask import Blueprint, render_template, request, redirect, session, flash
 
 from db.models import db, Users
+from modules.logger import logger
 
 signup = Blueprint(
-    'signup',
-    __name__, 
-    template_folder='templates',
-    static_folder='static'
-    )
+    "signup", __name__, template_folder="templates", static_folder="static"
+)
 
-@signup.route('/signup', methods=['POST', 'GET'])
+
+@signup.route("/signup", methods=["POST", "GET"])
 def render_signup_page():
-     if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        verify = request.form['verify-password']
+    logger.info(f"Rendering signup page with request method: {request.method}")
 
-        if username == "":
-            return render_template('signup.html', username_error="Field can not be empty")
+    if request.method == "POST":
+        try:
+            username = request.form["username"]
+            password = request.form["password"]
+            verify = request.form["verify-password"]
 
-        if len(username) <= 2 or len(username) > 20:
-            return render_template('signup.html', username_error="Username is out of range 3-20")
+            if username == "":
+                return render_template(
+                    "signup.html", username_error="Field can not be empty"
+                )
 
-        if username.count(" ") > 0:
-            return render_template('signup.html', username_error="Username can not have spaces")
+            if len(username) <= 2 or len(username) > 20:
+                return render_template(
+                    "signup.html", username_error="Username is out of range 3-20"
+                )
 
-        if password == "":
-            return render_template('signup.html', password_error="Fields can not be empty")
+            if username.count(" ") > 0:
+                return render_template(
+                    "signup.html", username_error="Username can not have spaces"
+                )
 
-        if len(password) <= 2 or len(password) > 20:
-            return render_template('signup.html', password_error="Password is out of range 3-20")
+            if password == "":
+                return render_template(
+                    "signup.html", password_error="Fields can not be empty"
+                )
 
-        if password.count(" ") > 0:
-            return render_template('signup.html', password_error="Password can not have spaces")
+            if len(password) <= 2 or len(password) > 20:
+                return render_template(
+                    "signup.html", password_error="Password is out of range 3-20"
+                )
 
-        if password != verify:
-            return render_template('signup.html', password_error="Passwords do not match",
-            verify_error="Passwords do not match")
+            if password.count(" ") > 0:
+                return render_template(
+                    "signup.html", password_error="Password can not have spaces"
+                )
 
-        else:
-            existing_user = Users.query.filter_by(username=username).first()
-            
-            if not existing_user:
-                new_user = Users(username, password)
-                db.session.add(new_user)
-                db.session.commit()
-                session['username'] = username
-                flash('You now have a Blogz user account')
-                return redirect('/')
+            if password != verify:
+                return render_template(
+                    "signup.html",
+                    password_error="Passwords do not match",
+                    verify_error="Passwords do not match",
+                )
+
             else:
-                flash('Username already in use')
-                return render_template('signup.html', username_error="", password_error="",
-                verify_error="")
+                existing_user = Users.query.filter_by(username=username).first()
 
-     return render_template('signup.html', username_error="", password_error="",
-     verify_error="")
+                if not existing_user:
+                    new_user = Users(username, password)
+                    db.session.add(new_user)
+                    db.session.commit()
+                    session["username"] = username
+                    flash("You now have a Blogz user account")
+                    return redirect("/")
+                else:
+                    flash("Username already in use")
+                    return render_template(
+                        "signup.html",
+                        username_error="",
+                        password_error="",
+                        verify_error="",
+                    )
+        except Exception as e:
+            logger.exception(f"Error rendering signup page: {e}")
+
+            return render_template("error.html", error=e)
+
+    return render_template(
+        "signup.html", username_error="", password_error="", verify_error=""
+    )
