@@ -24,10 +24,10 @@
                     <a class="link" href='/'>Bloggers</a>
                 </li>
                 <li>
-                    <a class="link" href='/blog'>All Blog Posts</a>
+                    <a class="link" href='/blog'>Blogs</a>
                 </li>
                 <li>
-                    <a class="link" href='/create-blog-post'>Publish a Blog Post</a>
+                    <a class="link" href='/create-blog-post'>Publish</a>
                 </li>
                 <li>
                     <a class="link" href='/login'>Log in</a>
@@ -46,8 +46,10 @@
         </ul>
         {% endwith %}
 
-        {% block content %}
-        {% endblock %}
+        <main class="content">
+            {% block content %}
+            {% endblock %}
+        </main>
     </body>
 
 </html>

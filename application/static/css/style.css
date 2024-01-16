@@ -35,6 +35,57 @@ html {
   width: 100%;
   font-family: sarabun-regular;
   font-size: 16px;
+  background-color: var(--tertiary-color);
+}
+
+main {
+  position: relative;
+  margin: 0;
+  padding: 5px 20px;
+  color: var(--quinary-color);
+}
+
+.app-navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--quinary-color);
+  color: var(--tertiary-color);
+  padding: 0 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+#app-title {
+  font-family: sarabun-bold;
+  font-size: 1.5rem;
+}
+
+.app-navigation ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  color: var(--tertiary-color);
+  list-style: none;
+}
+
+.app-navigation a {
+  padding: 7px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  color: var(--tertiary-color);
+  -webkit-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.app-navigation a:hover {
+  color: var(--quinary-color);
+  background-color: var(--quaternary-color);
 }
 
 .error {
