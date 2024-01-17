@@ -38,11 +38,12 @@ html {
   background-color: var(--tertiary-color);
 }
 
-main {
+body {
   position: relative;
   margin: 0;
-  padding: 5px 20px;
-  color: var(--quinary-color);
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
 /* ------------------- NAVIGATION ------------------- */
@@ -52,6 +53,7 @@ main {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  height: 2.8rem;
   background-color: var(--quinary-color);
   color: var(--tertiary-color);
   padding: 0 20px;
@@ -98,14 +100,17 @@ main {
 /* ------------------- CONTENT ------------------- */
 
 .content {
+  box-sizing: border-box;
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0;
-  padding: 0;
-  height: 100%;
+  padding: 5px 20px;
+  height: calc(100% - 2.8rem);
   width: 100%;
+  color: var(--quinary-color);
   background-color: var(--tertiary-color);
 }
 
@@ -136,6 +141,42 @@ main {
 
 .content a:hover {
   filter: contrast(1.5);
+}
+
+.flashed-messages {
+  display: none;
+}
+
+/* ------------------- LOG IN PAGE ------------------- */
+
+#login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--tertiary-color);
+  border-radius: 4px;
+}
+
+#login-page .header {
+  font-family: sarabun-bold;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+#login-page form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 .error {
