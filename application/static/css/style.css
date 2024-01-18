@@ -40,6 +40,10 @@ html {
 
 body {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -53,10 +57,13 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 90%;
   height: 2.8rem;
-  background-color: var(--quinary-color);
-  color: var(--tertiary-color);
   padding: 0 20px;
+  margin: 20px 0 0 0;
+  background-color: var(--quinary-color);
+  border-radius: 4px;
+  color: var(--tertiary-color);
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 }
 
@@ -131,7 +138,7 @@ body {
   margin: 0;
   padding: 5px 20px;
   height: calc(100% - 2.8rem);
-  width: 100%;
+  width: 90%;
   color: var(--quinary-color);
 }
 
@@ -240,6 +247,49 @@ body {
 #signup-page input:focus {
   outline: transparent;
   border: var(--secondary-color) 1px solid;
+}
+
+/* ------------------- BLOGGERS ------------------- */
+
+.users {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ------------------- BLOGS ------------------- */
+
+.blog-previews {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.blog-preview {
+  color: var(--tertiary-color);
+  padding: 15px;
+  border-radius: 4px;
+  background-color: #18181c;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+/* ------------------- FOOTER ------------------- */
+.app-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 2.8rem;
+  padding: 0 20px;
+  margin: 0 0 20px 0;
+  background-color: var(--quinary-color);
+  border-radius: 4px;
+  color: var(--tertiary-color);
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 }
 
 .error {

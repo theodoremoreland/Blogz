@@ -2,22 +2,24 @@
 {% block content %}
 <h1 class="header">{{header}}</h1>
 
-{% for blog_post in blog %}
-<div class="blog-preview">
-    <h2 class="title">
-        <a href="/blog?blog_post_id={{blog_post.id}}">{{blog_post.title}}</a>
-    </h2>
-    <p class="entry">
-        {{blog_post.entry[0:100]}}...
-    </p>
-    <p class="author">
-        written by <a href="/blog?user={{blog_post.author_id}}">{{blog_post.author.username}}</a>
-    </p>
-    <p>
-        <a class="link" href="/blog?blog_post_id={{blog_post.id}}">
-            View Blog Post
-        </a>
-    </p>
-</div>
-{% endfor %}
+<ul class="blog-previews">
+    {% for blog_post in blog %}
+    <li class="blog-preview">
+        <h2 class="title">
+            <a href="/blog?blog_post_id={{blog_post.id}}">{{blog_post.title}}</a>
+        </h2>
+        <p class="entry">
+            {{blog_post.entry[0:100]}}...
+        </p>
+        <p class="author">
+            written by <a href="/blog?user={{blog_post.author_id}}">{{blog_post.author.username}}</a>
+        </p>
+        <p>
+            <a class="link" href="/blog?blog_post_id={{blog_post.id}}">
+                View Blog Post
+            </a>
+        </p>
+    </li>
+    {% endfor %}
+</ul>
 {% endblock %}

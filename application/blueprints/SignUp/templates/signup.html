@@ -3,15 +3,7 @@
 {% block content %}
 <div id="signup-page">
     <h1 class="header">Sign Up</h1>
-    {% if username_error is defined %}
-    <span class="error">{{username_error}}</span>
-    {% endif %}
-    {% if password_error is defined %}
-    <span class="error">{{password_error}}</span>
-    {% endif %}
-    {% if verify_error is defined %}
-    <span class="error">{{verify_error}}</span>
-    {% endif %}
+
     <form method='POST'>
         <div class="row">
             <label for="username">Username</label>
@@ -24,6 +16,11 @@
         <div class="row">
             <label for="verify-password">Verify Password</label>
             <input type="password" name="verify-password" value>
+        </div>
+        <div class="row error">
+            <span class="error">{{username_error}}</span>
+            <span class="error">{{password_error}}</span>
+            <span class="error">{{verify_error}}</span>
         </div>
 
         <button type="submit">Sign Up</button>
