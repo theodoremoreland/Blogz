@@ -1,27 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1 class="header">Sign Up</h1>
+<div id="signup-page">
+    <h1 class="header">Sign Up</h1>
+    {% if username_error is defined %}
+    <span class="error">{{username_error}}</span>
+    {% endif %}
+    {% if password_error is defined %}
+    <span class="error">{{password_error}}</span>
+    {% endif %}
+    {% if verify_error is defined %}
+    <span class="error">{{verify_error}}</span>
+    {% endif %}
+    <form method='POST'>
+        <div class="row">
+            <label for="username">Username</label>
+            <input type="text" name="username" value>
+        </div>
+        <div class="row">
+            <label for="password">Password</label>
+            <input type="password" name="password" value>
+        </div>
+        <div class="row">
+            <label for="verify-password">Verify Password</label>
+            <input type="password" name="verify-password" value>
+        </div>
 
-<form method='POST'>
-    <div class="row">
-        <label for="username">Username</label>
-        <input type="text" name="username" value>
-        <span class="error">{{username_error}}</span>
-    </div>
-
-    <div class="row">
-        <label for="password">Password</label>
-        <input type="password" name="password" value>
-        <span class="error">{{password_error}}</span>
-    </div>
-
-    <div class="row">
-        <label for="verify-password">Verify Password</label>
-        <input type="password" name="verify-password" value>
-        <span class="error">{{verify_error}}</span>
-    </div>
-
-    <button type="submit">Sign Up</button>
-</form>
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
 {% endblock %}

@@ -82,11 +82,17 @@ body {
 }
 
 .app-navigation .link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
   padding: 7px 14px;
   border-radius: 4px;
   text-decoration: none;
   letter-spacing: 1px;
   color: var(--tertiary-color);
+  cursor: pointer;
   -webkit-transition: all 200ms linear;
   -ms-transition: all 200ms linear;
   transition: all 200ms linear;
@@ -95,6 +101,22 @@ body {
 .app-navigation .link:hover {
   color: var(--quinary-color);
   background-color: var(--quaternary-color);
+}
+
+.app-navigation .link:hover svg {
+  fill: #18181c;
+}
+
+.app-navigation svg {
+  fill: var(--tertiary-color);
+  -webkit-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.app-navigation a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* ------------------- CONTENT ------------------- */
@@ -111,7 +133,6 @@ body {
   height: calc(100% - 2.8rem);
   width: 100%;
   color: var(--quinary-color);
-  background-color: var(--tertiary-color);
 }
 
 .header {
@@ -149,34 +170,76 @@ body {
 
 /* ------------------- LOG IN PAGE ------------------- */
 
-#login-page {
+#login-page,
+#signup-page {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  gap: 15px;
   margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  background-color: var(--tertiary-color);
+  padding: 25px;
+  height: auto;
+  width: clamp(200px, 28%, 50ch);
+  text-align: left;
+  color: var(--tertiary-color);
+  background-color: #18181ce3;
   border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-#login-page .header {
+#login-page .header,
+#signup-page .header {
   font-family: sarabun-bold;
   font-size: 2rem;
   letter-spacing: 2px;
-  margin-bottom: 20px;
+  margin: 0;
+  width: 100%;
+  text-align: left;
 }
 
-#login-page form {
+#login-page .sub-header,
+#signup-page .sub-header {
+  margin: 0;
+  text-align: left;
+  width: 100%;
+}
+
+#login-page form,
+#signup-page form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
+  align-items: flex-start;
+  width: 100%;
+  gap: 15px;
   margin: 0;
   padding: 0;
+  text-align: left;
+}
+
+#login-page form .row,
+#signup-page form .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#login-page input,
+#signup-page input {
+  width: 25ch;
+  border: transparent 1px solid;
+  -webkit-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+#login-page input:focus,
+#signup-page input:focus {
+  outline: transparent;
+  border: var(--secondary-color) 1px solid;
 }
 
 .error {
