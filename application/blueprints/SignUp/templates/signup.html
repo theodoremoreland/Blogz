@@ -7,15 +7,15 @@
     <form method='POST'>
         <div class="row">
             <label for="username">Username</label>
-            <input type="text" name="username" value>
+            <input type="text" name="username" autocomplete="off" value required>
         </div>
         <div class="row">
             <label for="password">Password</label>
-            <input type="password" name="password" value>
+            <input type="password" name="password" autocomplete="off" value required>
         </div>
         <div class="row">
             <label for="verify-password">Verify Password</label>
-            <input type="password" name="verify-password" value>
+            <input type="password" name="verify-password" autocomplete="off" value required>
         </div>
         <div class="row error">
             <span class="error">{{username_error}}</span>
