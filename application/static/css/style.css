@@ -296,6 +296,39 @@ body {
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 }
 
+#copyright {
+  font-family: sarabun-light;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+#socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+}
+
+#socials a {
+  text-decoration: none;
+  color: var(--tertiary-color);
+}
+
+#socials a:hover {
+  filter: brightness(1.1);
+}
+
+#socials img {
+  height: 1.8rem;
+}
+
+#socials img:hover,
+#socials img:active {
+  scale: 1.1;
+}
+
 .error {
   color: red;
 }
