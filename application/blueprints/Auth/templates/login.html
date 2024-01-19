@@ -7,11 +7,11 @@
     <form action="/login" method="POST">
         <div class="row">
             <label for="username">Username</label>
-            <input name="username" type="text" value="{{ username }}">
+            <input name="username" type="text" value="{{ username }}" required>
         </div>
         <div class="row">
             <label for="password">Password</label>
-            <input name="password" type="password">
+            <input name="password" type="password" required autocomplete="current-password">
         </div>
         <div class="row error">
             <span class="error">{{username_error}}</span>
