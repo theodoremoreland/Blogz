@@ -11,6 +11,8 @@ def login():
     if "username" in session:
         logger.info("User already logged in, redirecting to home page")
 
+        flash("You are already logged in")
+
         return redirect("/")
 
     if request.method == "POST":

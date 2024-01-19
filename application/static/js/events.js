@@ -1,4 +1,5 @@
 const blogPathRegex = new RegExp("/blog$");
+const bloggersPathRegex = new RegExp("/bloggers$");
 const createBlogPostPathRegex = new RegExp("/create-blog-post$");
 const loginPathRegex = new RegExp("/login$");
 const signupPathRegex = new RegExp("/signup$");
@@ -12,15 +13,15 @@ window.onload = function () {
   );
   const loginAnchor = document.querySelector("#login .link-item");
 
-  if (blogPathRegex.test(location)) {
+  if (bloggersPathRegex.test(location)) {
+    bloggersAnchor.classList.add("selected");
+  } else if (blogPathRegex.test(location)) {
     blogAnchor.classList.add("selected");
   } else if (createBlogPostPathRegex.test(location)) {
     createBlogPostAnchor.classList.add("selected");
   } else if (loginPathRegex.test(location)) {
     loginAnchor.classList.add("selected");
-  } else if (signupPathRegex.test(location) || location.includes("blog")) {
-    // do nothing
   } else {
-    bloggersAnchor.classList.add("selected");
+    // do nothing
   }
 };
