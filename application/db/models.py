@@ -6,6 +6,8 @@ class BlogPosts(db.Model):
     title = db.Column(db.String(50))
     entry = db.Column(db.String(1000))
     author_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    created_at = db.Column(db.DateTime, server_default=db.func.now())
+    comments = db.relationship("Comments", backref="blog_post")
 
     def __init__(self, title, entry, author):
         self.title = title
@@ -17,10 +19,26 @@ class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=True)
     password = db.Column(db.String(20))
+    about_me = db.Column(db.String(1000))
     blog_posts = db.relationship(
         "BlogPosts", backref="author"
     )  # refers to name of model / class not table
+    comments = db.relationship("Comments", backref="author")
 
-    def __init__(self, username, password):
+    def __init__(self, username, password, about_me=""):
         self.username = username
         self.password = password
+        self.about_me = about_me
+
+
+class Comments(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    comment = db.Column(db.String(1000))
+    author_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    blog_post_id = db.Column(db.Integer, db.ForeignKey("blog_posts.id"))
+    created_at = db.Column(db.DateTime, server_default=db.func.now())
+
+    def __init__(self, comment, author_id, blog_post_id):
+        self.comment = comment
+        self.author_id = author_id
+        self.blog_post_id = blog_post_id

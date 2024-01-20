@@ -6,6 +6,9 @@
   <hr>
   <p class="author">
     written by <a href="/blog?user={{blog_post.author_id}}">{{blog_post.author.username}}</a>
+    <span class="date">
+      on {{blog_post.created_at.strftime("%B %d, %Y")}}
+    </span>
   </p>
 </div>
 {% endblock %}
