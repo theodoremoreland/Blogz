@@ -22,6 +22,6 @@ def render_bloggers_page():
             "bloggers.html", users_list=users, post_count_by_user=post_count_by_user
         )
     except Exception as e:
-        logger.exception(f"Error rendering home page: {e}")
+        logger.exception(f"Error rendering bloggers page: {e}")
 
-        return render_template("error.html", error=e)
+        return render_template("error.html")
