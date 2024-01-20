@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template
 
-from db.models import Users, BlogPosts
+from db.models import Users
 from modules.logger import logger
 
 bloggers = Blueprint(

@@ -20,6 +20,7 @@ class Users(db.Model):
     username = db.Column(db.String(20), unique=True)
     password = db.Column(db.String(20))
     about_me = db.Column(db.String(1000))
+    member_since = db.Column(db.DateTime, server_default=db.func.now())
     blog_posts = db.relationship(
         "BlogPosts", backref="author"
     )  # refers to name of model / class not table

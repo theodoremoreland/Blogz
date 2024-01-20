@@ -272,6 +272,23 @@ body {
   margin: 0;
 }
 
+.metadata {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.since {
+  font-family: sarabun-light;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
 /* ------------------- BLOGS ------------------- */
 
 .blog-previews {
