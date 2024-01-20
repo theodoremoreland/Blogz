@@ -17,6 +17,7 @@ def render_signup_page():
             username = request.form["username"]
             password = request.form["password"]
             verify = request.form["verify-password"]
+            about_me = request.form["about-me"]
 
             if username == "":
                 return render_template(
@@ -59,7 +60,7 @@ def render_signup_page():
                 existing_user = Users.query.filter_by(username=username).first()
 
                 if not existing_user:
-                    new_user = Users(username, password)
+                    new_user = Users(username, password, about_me)
                     db.session.add(new_user)
                     db.session.commit()
                     session["username"] = username

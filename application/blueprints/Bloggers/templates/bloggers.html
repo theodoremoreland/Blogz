@@ -2,9 +2,12 @@
 
 {% block content %}
 
-{% for users in users_list %}
+{% for user in users_list %}
 <ul class="users">
-    <li><a class="user" href="/blog?user={{users.id}}">{{users.username}}</a></li>
+    <li>
+        <a class="user" href="/blog?user={{user.id}}">{{user.username}}</a>
+        <p class="about">{{user.about_me}}</p>
+    </li>
 </ul>
 {% endfor %}
 

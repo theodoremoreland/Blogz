@@ -194,7 +194,7 @@ body {
   width: clamp(200px, 28%, 50ch);
   text-align: left;
   color: var(--tertiary-color);
-  background-color: #18181ce3;
+  background-color: #18181c;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
@@ -239,7 +239,8 @@ body {
 }
 
 #login-page input,
-#signup-page input {
+#signup-page input,
+#signup-page textarea {
   width: 25ch;
   border: transparent 1px solid;
   -webkit-transition: all 200ms linear;
@@ -248,9 +249,14 @@ body {
 }
 
 #login-page input:focus,
-#signup-page input:focus {
+#signup-page input:focus,
+#signup-page textarea:focus {
   outline: transparent;
   border: var(--secondary-color) 1px solid;
+}
+
+#signup-page textarea {
+  height: 20ch;
 }
 
 /* ------------------- BLOGGERS ------------------- */
