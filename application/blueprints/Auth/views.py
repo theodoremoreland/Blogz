@@ -40,7 +40,7 @@ def login():
     return render_template("login.html")
 
 
-@auth.route("/logout")
+@auth.route("/logout", methods=["GET"])
 def logout():
     try:
         if "username" in session:

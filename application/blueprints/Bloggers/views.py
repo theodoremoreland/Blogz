@@ -8,7 +8,7 @@ bloggers = Blueprint(
 )
 
 
-@bloggers.route("/bloggers")
+@bloggers.route("/bloggers", methods=["GET"])
 def render_bloggers_page():
     try:
         users = Users.query.all()

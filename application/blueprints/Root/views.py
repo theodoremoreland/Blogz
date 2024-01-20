@@ -6,7 +6,7 @@ from db.models import Users
 root = Blueprint("root", __name__, template_folder="templates", static_folder="static")
 
 
-@root.route("/")
+@root.route("/", methods=["GET"])
 def handle_root_request():
     try:
         if "username" in session:
