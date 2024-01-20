@@ -19,6 +19,10 @@ def render_signup_page():
             verify = request.form["verify-password"]
             about_me = request.form["about-me"]
 
+            logger.info(
+                f"User attempting to sign up as {username}, with about me: {about_me}"
+            )
+
             if username == "":
                 return render_template(
                     "signup.html", username_error="Field can not be empty"

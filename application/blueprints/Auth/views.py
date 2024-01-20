@@ -9,17 +9,20 @@ auth = Blueprint("auth", __name__, template_folder="templates", static_folder="s
 @auth.route("/login", methods=["POST", "GET"])
 def login():
     if "username" in session:
-        logger.info("User already logged in, redirecting to home page")
+        logger.info(
+            f"User: {session['username']} already logged in, redirecting to home page"
+        )
 
         flash("You are already logged in")
 
         return redirect("/")
 
     if request.method == "POST":
-        logger.info("User attempting to log in")
-
         username = request.form["username"]
         password = request.form["password"]
+
+        logger.info(f"User attempting to log in as {username}...")
+
         user = Users.query.filter_by(username=username).first()
 
         if user and user.password == password:

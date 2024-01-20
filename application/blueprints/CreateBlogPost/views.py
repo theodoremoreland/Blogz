@@ -20,10 +20,10 @@ def require_login():
 def create_post():
     try:
         if request.method == "POST":
-            logger.info(f"Creating blog post")
-
             entry = request.form["entry"]
             title = request.form["title"]
+
+            logger.info(f"Creating blog post: {title}\n{entry}...")
 
             if title == "" or entry == "":
                 flash("Please fill both fields")
