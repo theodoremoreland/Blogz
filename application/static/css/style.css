@@ -178,7 +178,10 @@ body {
 }
 
 .flashed-messages {
-  display: none;
+  padding: 0;
+  margin: 16px 0;
+  color: var(--quaternary-color);
+  list-style: none;
 }
 
 /* ------------------- LOG IN PAGE ------------------- */

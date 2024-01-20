@@ -24,7 +24,7 @@ def login():
 
         if user and user.password == password:
             session["username"] = username
-            flash("Logged in")
+            flash("You are now logged in")
 
             logger.info(f"User {username} logged in")
 
@@ -57,6 +57,8 @@ def logout():
             return redirect("/")
         else:
             logger.info("User not logged in, redirecting to login page")
+
+            flash("You must log in before you can log out")
 
             return redirect("/login")
     except Exception as e:

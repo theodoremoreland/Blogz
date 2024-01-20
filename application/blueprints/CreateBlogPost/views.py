@@ -38,6 +38,8 @@ def create_post():
                     BlogPosts.query.filter_by(title=title, entry=entry).first().id
                 )
 
+                flash("Blog post created")
+
                 return redirect("/blog?blog_post_id=" + str(blog_post_id))
 
         logger.info(f"Rendering create blog post page")

@@ -64,7 +64,7 @@ def render_signup_page():
                     db.session.add(new_user)
                     db.session.commit()
                     session["username"] = username
-                    flash("You now have a Blogz user account")
+                    flash("blogz user account created!")
                     return redirect("/")
                 else:
                     flash("Username already in use")
