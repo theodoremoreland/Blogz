@@ -59,6 +59,7 @@ body {
   align-items: center;
   width: 90%;
   height: 2.8rem;
+  box-sizing: border-box;
   padding: 0 20px;
   margin: 20px 0 0 0;
   background-color: var(--quinary-color);
@@ -139,8 +140,9 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  box-sizing: border-box;
   margin: 0;
-  padding: 5px 20px;
+  padding: 5px 0;
   height: calc(100% - 2.8rem);
   width: 90%;
   color: var(--quinary-color);
@@ -273,8 +275,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -294,6 +299,7 @@ body {
   align-items: center;
   width: 90%;
   height: 2.8rem;
+  box-sizing: border-box;
   padding: 0 20px;
   margin: 0 0 20px 0;
   background-color: var(--quinary-color);
