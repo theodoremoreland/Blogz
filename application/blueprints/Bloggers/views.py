@@ -10,6 +10,8 @@ bloggers = Blueprint(
 
 @bloggers.route("/bloggers", methods=["GET"])
 def render_bloggers_page():
+    logger.info("Rendering bloggers page")
+
     try:
         users = Users.query.all()
         post_count_by_user = {}
