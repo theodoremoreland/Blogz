@@ -2,8 +2,8 @@
 
 {% block content %}
 
-{% for user in users_list %}
 <ul class="users">
+    {% for user in users_list %}
     <li>
         <a class="user" href="/blog?user={{user.id}}">{{user.username}}</a>
         <p class="about">{{user.about_me}}</p>
@@ -12,7 +12,7 @@
             <span class="since">Member since: {{user.member_since.strftime("%B %d, %Y")}}</span>
         </div>
     </li>
+    {% endfor %}
 </ul>
-{% endfor %}
 
 {% endblock %}

@@ -267,9 +267,16 @@ body {
 /* ------------------- BLOGGERS ------------------- */
 
 .users {
-  list-style: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
 .users > li {
