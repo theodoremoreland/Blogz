@@ -43,19 +43,22 @@ def login():
 @auth.route("/logout")
 def logout():
     try:
-        if "username" not in session:
+        if "username" in session:
+            username = session["username"]
+
+            logger.info(f"User {username} logging out...")
+
+            del session["username"]
+
+            flash("You are now logged out")
+
+            logger.info(f"User {username} logged out")
+
+            return redirect("/")
+        else:
             logger.info("User not logged in, redirecting to login page")
 
             return redirect("/login")
-
-        logger.info(f"User {session['username']} logging out")
-
-        del session["username"]
-        flash("You are now logged out")
-
-        logger.info(f"User {session['username']} logged out")
-
-        return redirect("/")
     except Exception as e:
         logger.exception(f"Error logging out: {e}")
 
