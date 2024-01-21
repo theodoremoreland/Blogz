@@ -4,9 +4,9 @@
 <div id="create-blog-post-page" class="page">
     <h1 class="header">New blog post</h1>
     <form method='POST' id="create_new_blog_entry">
-        <input type="text" name='title' placeholder="Title" maxlength="50" minlength="5" required />
+        <input type="text" name='title' placeholder="Title" maxlength="60" minlength="3" required />
         <textarea name="entry" form="create_new_blog_entry" rows="10" cols="21" placeholder="Entry" minlength="5"
-            maxlength="1000" required></textarea>
+            maxlength="5000" required></textarea>
         <div class="row error">
             <span class="error">{{title_error}}</span>
             <span class="error">{{entry_error}}</span>

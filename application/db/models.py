@@ -3,8 +3,8 @@ from . import db
 
 class BlogPosts(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(50))
-    entry = db.Column(db.String(1000))
+    title = db.Column(db.String(60))
+    entry = db.Column(db.String(5000))
     author_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     created_at = db.Column(db.DateTime, server_default=db.func.now())
     comments = db.relationship("Comments", backref="blog_post")
