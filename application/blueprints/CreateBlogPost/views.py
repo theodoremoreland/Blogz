@@ -29,9 +29,9 @@ def create_post():
 
             if title == "" or entry == "":
                 flash("Please fill both fields")
-            elif len(title) > 50:
+            elif len(title) > 60:
                 flash("Title must be less than 50 characters")
-            elif len(entry) > 1000:
+            elif len(entry) > 5000:
                 flash("Entry must be less than 1000 characters")
             else:
                 author = Users.query.filter_by(username=session["username"]).first()
