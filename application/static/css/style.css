@@ -332,9 +332,10 @@ body {
 
 .blog-previews {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
+  flex-wrap: wrap;
   gap: 20px;
   width: 100%;
   margin: 0;
@@ -343,6 +344,7 @@ body {
 }
 
 .blog-preview {
+  flex: 1;
   color: var(--tertiary-color);
   padding: 15px;
   border: var(--primary-border);
