@@ -1,18 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="header">Create New Blog Post</h1>
-
-<form method='POST' id="create_new_blog_entry">
-    <div>
-        <label for="title">Title</label>
-        <input type="text" name='title' />
-    </div>
-    <div>
-        <label for="entry">Entry</label>
-        <textarea name="entry" form="create_new_blog_entry" rows="10" cols="21"></textarea>
-    </div>
-
-    <button type="submit">Publish</button>
-</form>
+<div id="create-blog-post-page" class="page">
+    <h1 class="header">New blog post</h1>
+    <form method='POST' id="create_new_blog_entry">
+        <input type="text" name='title' placeholder="Title" />
+        <textarea name="entry" form="create_new_blog_entry" rows="10" cols="21" placeholder="Entry"></textarea>
+        <div class="row error">
+            <span class="error">{{title_error}}</span>
+            <span class="error">{{entry_error}}</span>
+        </div>
+        <button type="submit">Publish</button>
+    </form>
+</div>
 {% endblock %}

@@ -30,6 +30,8 @@
   --quinary-color: #18181c;
 }
 
+/* ------------------- GLOBAL ------------------- */
+
 html {
   height: 100%;
   width: 100%;
@@ -186,8 +188,8 @@ body {
 
 /* ------------------- LOG IN PAGE ------------------- */
 
-#login-page,
-#signup-page {
+.page {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -204,8 +206,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-#login-page .header,
-#signup-page .header {
+.page .header {
   font-family: sarabun-bold;
   font-size: 2rem;
   letter-spacing: 2px;
@@ -214,15 +215,13 @@ body {
   text-align: left;
 }
 
-#login-page .sub-header,
-#signup-page .sub-header {
+.page .sub-header {
   margin: 0;
   text-align: left;
   width: 100%;
 }
 
-#login-page form,
-#signup-page form {
+.page form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -234,8 +233,7 @@ body {
   text-align: left;
 }
 
-#login-page form .row,
-#signup-page form .row {
+.page form .row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -243,25 +241,34 @@ body {
   width: 100%;
 }
 
-#login-page input,
-#signup-page input,
-#signup-page textarea {
+.page input,
+.page textarea {
   width: 25ch;
+  background-color: var(--tertiary-color);
   border: transparent 1px solid;
   -webkit-transition: all 200ms linear;
   -ms-transition: all 200ms linear;
   transition: all 200ms linear;
 }
 
-#login-page input:focus,
-#signup-page input:focus,
-#signup-page textarea:focus {
+.page input:focus,
+.page textarea:focus {
   outline: transparent;
   border: var(--secondary-color) 1px solid;
 }
 
-#signup-page textarea {
+.page textarea {
   height: 20ch;
+}
+
+/* ------------------- CREATE BLOG POST ------------------- */
+#create-blog-post-page {
+  width: clamp(200px, 50%, 800px);
+}
+
+#create-blog-post-page input,
+#create-blog-post-page textarea {
+  width: 100%;
 }
 
 /* ------------------- BLOGGERS ------------------- */
