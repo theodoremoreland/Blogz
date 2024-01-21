@@ -26,8 +26,8 @@
 <section id="comment-section">
   <h2 class="sub-header">Leave a comment</h2>
   <form method='POST' id="post_comment_form" action="/comment?blog_post_id={{blog_post.id}}">
-    <textarea name="comment" form="post_comment_form" rows="10" cols="21"
-      placeholder="Enter your comment here"></textarea>
+    <textarea name="comment" form="post_comment_form" rows="10" cols="21" placeholder="Enter your comment here" required
+      minlength="5" maxlength="1000"></textarea>
     <div class="row error">
       <span class="error">{{comment_error}}</span>
     </div>
