@@ -22,10 +22,9 @@ def render_blog():
     try:
         if user_id:
             user_blog = BlogPosts.query.filter_by(author_id=user_id).all()
-            username = Users.query.filter_by(id=user_id).first().username
-            return render_template(
-                "blog.html", blog=user_blog, scope="user", username=username
-            )
+            user = Users.query.filter_by(id=user_id).first()
+
+            return render_template("blog.html", blog=user_blog, scope="user", user=user)
         elif blog_post_id:
             blog_post = BlogPosts.query.filter_by(id=blog_post_id).first()
             comments = blog_post.comments
@@ -35,6 +34,7 @@ def render_blog():
             )
         else:
             all_blog_posts = BlogPosts.query.all()
+
             return render_template("blog.html", blog=all_blog_posts, scope="all")
     except Exception as e:
         logger.exception(f"Error rendering blog page: {e}")

@@ -384,6 +384,29 @@ body {
   letter-spacing: 1px;
 }
 
+.blog-user {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 0 0 20px 0;
+  border: var(--primary-border);
+  border-radius: 4px;
+  color: var(--tertiary-color);
+  box-shadow: var(--primary-shadow);
+}
+
+.blog-user .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.blog-user svg {
+  fill: var(--tertiary-color);
+}
+
 .blog-post {
   color: var(--tertiary-color);
   width: 100%;
