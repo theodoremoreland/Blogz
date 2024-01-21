@@ -29,6 +29,7 @@
   --quaternary-color: rgb(255, 95, 104);
   --quinary-color: #18181c;
   --primary-border: solid rgba(219, 222, 227, 0.158) 1px;
+  --primary-shadow: box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   --secondary-background-color: #18181c45;
 }
 
@@ -75,7 +76,7 @@ body {
   border-radius: 4px;
   border: var(--primary-border);
   color: var(--tertiary-color);
-  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  box-shadow: var(--primary-shadow);
 }
 
 #app-title {
@@ -212,7 +213,7 @@ body {
   background-color: var(--secondary-background-color);
   border: var(--primary-border);
   border-radius: 4px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: var(--primary-shadow);
 }
 
 .page .header {
@@ -301,7 +302,7 @@ body {
   border: var(--primary-border);
   border-radius: 4px;
   background-color: var(--secondary-background-color);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: var(--primary-shadow);
 }
 
 .metadata {
@@ -347,7 +348,7 @@ body {
   border: var(--primary-border);
   border-radius: 4px;
   background-color: var(--secondary-background-color);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: var(--primary-shadow);
 }
 
 .blog-preview .title {
@@ -464,7 +465,7 @@ body {
   border-radius: 4px;
   border: var(--primary-border);
   color: var(--tertiary-color);
-  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  box-shadow: var(--primary-shadow);
 }
 
 #copyright {
