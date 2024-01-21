@@ -28,11 +28,11 @@ def render_blog():
         elif blog_post_id:
             blog_post = BlogPosts.query.filter_by(id=blog_post_id).first()
             comments = blog_post.comments
-            author_id = blog_post.author_id
-            user_id_in_session = session.get("user_id")
+            author_id = str(blog_post.author_id)
+            user_id_in_session = str(session.get("user_id"))
 
             logger.info(
-                f"Rendering blog post with blog_post_id: {blog_post_id} and author_id: {author_id} as {user_id_in_session}"
+                f"Rendering blog post with blog_post_id: {blog_post_id} and author_id: {author_id} as user_id: {user_id_in_session}"
             )
 
             return render_template(
