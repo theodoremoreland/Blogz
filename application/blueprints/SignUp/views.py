@@ -12,6 +12,12 @@ signup = Blueprint(
 def render_signup_page():
     logger.info(f"Rendering signup page with request method: {request.method}")
 
+    if "username" in session:
+        logger.info("User already has an account. Redirecting to home page...")
+        flash("You already have an account")
+
+        return redirect("/")
+
     if request.method == "POST":
         try:
             username = request.form["username"]

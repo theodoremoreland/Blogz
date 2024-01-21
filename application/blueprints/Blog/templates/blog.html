@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
+
+
+{% if blog|length > 1 %}
 <ul class="blog-previews">
     {% for blog_post in blog %}
     <li class="blog-preview">
@@ -23,4 +26,10 @@
     </li>
     {% endfor %}
 </ul>
+{% else %}
+<p class="no-blog-posts">
+    No blog posts found. Be the first by <a href="/create-blog-post">creating a new blog post</a> or <a
+        href="/signup">registering</a> for an account.
+</p>
+{% endif %}
 {% endblock %}

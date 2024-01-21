@@ -2,6 +2,7 @@
 
 {% block content %}
 
+{% if users_list|length > 1 %}
 <ul class="users">
     {% for user in users_list %}
     <li>
@@ -14,5 +15,8 @@
     </li>
     {% endfor %}
 </ul>
+{% else %}
+<p class="no-users">No users found. Be the first by <a href="/signup">registering</a> for an account.</p>
+{% endif %}
 
 {% endblock %}
