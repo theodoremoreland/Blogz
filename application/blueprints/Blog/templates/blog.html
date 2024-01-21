@@ -14,15 +14,17 @@
         </p>
         <p class="author">
             written by <a href="/blog?user={{blog_post.author_id}}">{{blog_post.author.username}}</a>
+        </p>
+        <div class="metadata">
             <span class="date">
                 on {{blog_post.created_at.strftime("%B %d, %Y")}}
             </span>
-        </p>
-        <p>
-            <a class="link" href="/blog?blog_post_id={{blog_post.id}}">
-                View Blog Post
-            </a>
-        </p>
+            <span class="comment-count">
+                <a href="/blog?blog_post_id={{blog_post.id}}#comment-section">
+                    {{blog_post.comments|length}} comments
+                </a>
+            </span>
+        </div>
     </li>
     {% endfor %}
 </ul>

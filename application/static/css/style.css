@@ -28,6 +28,8 @@
   --tertiary-color: rgb(219, 222, 227);
   --quaternary-color: rgb(255, 95, 104);
   --quinary-color: #18181c;
+  --primary-border: solid rgba(219, 222, 227, 0.158) 1px;
+  --secondary-background-color: #18181c45;
 }
 
 /* ------------------- GLOBAL ------------------- */
@@ -37,7 +39,12 @@ html {
   width: 100%;
   font-family: sarabun-regular;
   font-size: 16px;
-  background-color: var(--tertiary-color);
+  background: var(--quinary-color);
+  background: radial-gradient(
+    circle farthest-corner at top right,
+    #000000db 0%,
+    #18181c 34%
+  );
 }
 
 body {
@@ -64,8 +71,9 @@ body {
   box-sizing: border-box;
   padding: 0 20px;
   margin: 20px 0 0 0;
-  background-color: var(--quinary-color);
+  background-color: var(--secondary-background-color);
   border-radius: 4px;
+  border: var(--primary-border);
   color: var(--tertiary-color);
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 }
@@ -201,7 +209,8 @@ body {
   width: clamp(200px, 28%, 50ch);
   text-align: left;
   color: var(--tertiary-color);
-  background-color: #18181c;
+  background-color: var(--secondary-background-color);
+  border: var(--primary-border);
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
@@ -289,8 +298,9 @@ body {
 .users > li {
   color: var(--tertiary-color);
   padding: 15px 20px;
+  border: var(--primary-border);
   border-radius: 4px;
-  background-color: var(--quinary-color);
+  background-color: var(--secondary-background-color);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
@@ -334,12 +344,26 @@ body {
 .blog-preview {
   color: var(--tertiary-color);
   padding: 15px;
+  border: var(--primary-border);
   border-radius: 4px;
-  background-color: #18181c;
+  background-color: var(--secondary-background-color);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
+.blog-preview .title {
+  margin: 0;
+  font-family: sarabun-bold;
+  letter-spacing: 1.5px;
+}
+
+.blog-preview .date {
+  font-family: sarabun-light;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
 .blog-post {
+  color: var(--tertiary-color);
   width: 100%;
 }
 
@@ -352,6 +376,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  color: var(--tertiary-color);
 }
 
 #comment-section .sub-header {
@@ -368,7 +393,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  gap: 15px;
+  gap: 5px;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -435,8 +460,9 @@ body {
   box-sizing: border-box;
   padding: 0 20px;
   margin: 0 0 20px 0;
-  background-color: var(--quinary-color);
+  background-color: var(--secondary-background-color);
   border-radius: 4px;
+  border: var(--primary-border);
   color: var(--tertiary-color);
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 }
