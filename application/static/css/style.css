@@ -305,6 +305,18 @@ body {
   box-shadow: var(--primary-shadow);
 }
 
+.users .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.users .header svg {
+  fill: var(--tertiary-color);
+}
+
 .metadata {
   display: flex;
   flex-direction: row;
@@ -450,6 +462,11 @@ body {
   width: 100%;
   margin: 0;
   text-align: left;
+}
+
+.comment svg {
+  fill: var(--tertiary-color);
+  padding-right: 5px;
 }
 
 /* ------------------- FOOTER ------------------- */
