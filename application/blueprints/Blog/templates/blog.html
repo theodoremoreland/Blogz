@@ -28,6 +28,10 @@
     </li>
     {% endfor %}
 </ul>
+{% elif scope == 'user' %}
+<p class="no-blog-posts">
+    {{username}} user has no blog posts.
+</p>
 {% else %}
 <p class="no-blog-posts">
     No blog posts found. Be the first by <a href="/create-blog-post">creating a new blog post</a> or <a

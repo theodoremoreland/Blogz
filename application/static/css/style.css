@@ -296,6 +296,13 @@ body {
   list-style: none;
 }
 
+.no-users {
+  color: var(--tertiary-color);
+  font-family: sarabun-light;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+}
+
 .users > li {
   color: var(--tertiary-color);
   padding: 15px 20px;
@@ -380,6 +387,13 @@ body {
 .blog-post {
   color: var(--tertiary-color);
   width: 100%;
+}
+
+.no-blog-posts {
+  color: var(--tertiary-color);
+  font-family: sarabun-light;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
 }
 
 #comment-section {
