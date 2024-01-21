@@ -11,7 +11,9 @@ create_blog_post = Blueprint(
 @create_blog_post.before_request
 def require_login():
     if "username" not in session:
-        logger.info("User not logged in, redirecting to login page")
+        logger.info("User not logged in, redirecting to login page...")
+
+        flash("Please login to begin publishing your posts")
 
         return redirect("/login")
 
