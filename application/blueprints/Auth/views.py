@@ -27,6 +27,8 @@ def login():
 
         if user and user.password == password:
             session["username"] = username
+            session["user_id"] = user.id
+
             flash("You are now logged in")
 
             logger.info(f"User {username} logged in")

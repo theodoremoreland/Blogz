@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, session, flash
 
-from db.models import BlogPosts, Users
+from db import db
+from db.models import BlogPosts, Users, Comments
 from modules.logger import logger
 
 blog = Blueprint("blog", __name__, template_folder="templates", static_folder="static")
@@ -27,7 +28,11 @@ def render_blog():
             )
         elif blog_post_id:
             blog_post = BlogPosts.query.filter_by(id=blog_post_id).first()
-            return render_template("blog_post.html", blog_post=blog_post)
+            comments = blog_post.comments
+
+            return render_template(
+                "blog_post.html", blog_post=blog_post, comments=comments
+            )
         else:
             all_blog_posts = BlogPosts.query.all()
             return render_template(
@@ -36,4 +41,39 @@ def render_blog():
     except Exception as e:
         logger.exception(f"Error rendering blog page: {e}")
 
-        return render_template("error.html", error=e)
+        return render_template("error.html")
+
+
+@blog.route("/comment", methods=["POST"])
+def add_comment():
+    if "username" not in session:
+        logger.info("User not logged in, redirecting to login page")
+
+        flash("You must be logged in to comment")
+
+        return redirect("/login")
+
+    comment = request.form.get("comment")
+    blog_post_id = request.args.get("blog_post_id")
+    author_id = session.get("user_id")
+
+    try:
+        if len(comment) < 5:
+            comment_error = "Comment must be at least 5 characters long"
+            logger.info("Comment has less than 5 characters, redirecting to blog post")
+
+            flash(comment_error, "error")
+
+            return redirect(f"/blog?blog_post_id={blog_post_id}")
+
+        new_comment = Comments(
+            comment=comment, blog_post_id=blog_post_id, author_id=author_id
+        )
+        db.session.add(new_comment)
+        db.session.commit()
+
+        return redirect(f"/blog?blog_post_id={blog_post_id}")
+    except Exception as e:
+        logger.exception(f"Error adding comment: {e}")
+
+        return render_template("error.html")
