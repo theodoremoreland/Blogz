@@ -175,6 +175,22 @@ body {
   transition: all 200ms linear;
 }
 
+.content button.delete {
+  background-color: transparent;
+  border: var(--quaternary-color) 1px solid;
+  border-radius: 0;
+  color: var(--tertiary-color);
+}
+
+.content button.delete:hover {
+  background-color: var(--quaternary-color);
+  color: var(--quinary-color);
+}
+
+.content button:active {
+  filter: brightness(0.9);
+}
+
 .content button:hover {
   filter: contrast(1.5);
 }

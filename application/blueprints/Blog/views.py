@@ -28,9 +28,18 @@ def render_blog():
         elif blog_post_id:
             blog_post = BlogPosts.query.filter_by(id=blog_post_id).first()
             comments = blog_post.comments
+            author_id = blog_post.author_id
+            user_id_in_session = session.get("user_id")
+
+            logger.info(
+                f"Rendering blog post with blog_post_id: {blog_post_id} and author_id: {author_id} as {user_id_in_session}"
+            )
 
             return render_template(
-                "blog_post.html", blog_post=blog_post, comments=comments
+                "blog_post.html",
+                blog_post=blog_post,
+                comments=comments,
+                is_owner=author_id == user_id_in_session,
             )
         else:
             all_blog_posts = BlogPosts.query.all()
@@ -38,6 +47,31 @@ def render_blog():
             return render_template("blog.html", blog=all_blog_posts, scope="all")
     except Exception as e:
         logger.exception(f"Error rendering blog page: {e}")
+
+        return render_template("error.html")
+
+
+@blog.route("/delete-blog-post", methods=["POST"])
+def delete_blog_post():
+    blog_post_id = request.args.get("blog_post_id")
+
+    try:
+        user_id_in_session = session.get("user_id")
+        blog_post = BlogPosts.query.filter_by(id=blog_post_id).first()
+
+        if blog_post.author_id == user_id_in_session:
+            db.session.delete(blog_post)
+            db.session.commit()
+        else:
+            logger.info(
+                f"User {user_id_in_session} attempted to delete blog post {blog_post_id} without permission"
+            )
+
+            flash("You do not have permission to delete this post", "error")
+
+        return redirect("/blog")
+    except Exception as e:
+        logger.exception(f"Error deleting blog post: {e}")
 
         return render_template("error.html")
 

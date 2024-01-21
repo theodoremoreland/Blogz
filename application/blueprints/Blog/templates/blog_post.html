@@ -4,12 +4,24 @@
   <h1 class="title">{{blog_post.title}}</h1>
   <p class="entry">{{blog_post.entry}}</p>
   <hr>
+  {% if is_owner %}
+  <p class="author">
+    written by <i>you</i>
+    <span class="date">
+      on {{blog_post.created_at.strftime("%B %d, %Y")}}
+    </span>
+  </p>
+  <form method="POST" action="/delete-blog-post?blog_post_id={{blog_post.id}}">
+    <button class="delete" type="submit">Delete</button>
+  </form>
+  {% else %}
   <p class="author">
     written by <a href="/blog?user={{blog_post.author_id}}">{{blog_post.author.username}}</a>
     <span class="date">
       on {{blog_post.created_at.strftime("%B %d, %Y")}}
     </span>
   </p>
+  {% endif %}
 </div>
 <section id="comment-section">
   <h2 class="sub-header">Leave a comment</h2>
