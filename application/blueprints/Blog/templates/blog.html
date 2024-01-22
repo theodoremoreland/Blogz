@@ -24,9 +24,15 @@
         <h2 class="title">
             <a href="/blog?blog_post_id={{blog_post.id}}">{{blog_post.title}}</a>
         </h2>
+        {% if blog_post.entry|length > 75 %}
         <p class="entry">
-            {{blog_post.entry[0:100]}}...
+            {{ blog_post.entry[:75] | trim }}...
         </p>
+        {% else %}
+        <p class="entry">
+            {{ blog_post.entry | trim}}
+        </p>
+        {% endif %}
         <p class="author">
             written by <a href="/blog?user={{blog_post.author_id}}">{{blog_post.author.username}}</a>
         </p>
