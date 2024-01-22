@@ -20,10 +20,10 @@ def render_signup_page():
 
     if request.method == "POST":
         try:
-            username = request.form["username"]
+            username = request.form["username"].strip()
             password = request.form["password"]
             verify = request.form["verify-password"]
-            about_me = request.form["about-me"]
+            about_me = request.form["about-me"].strip()
 
             logger.info(
                 f"User attempting to sign up as {username}, with about me: {about_me}"

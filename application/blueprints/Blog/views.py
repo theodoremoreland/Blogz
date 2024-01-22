@@ -85,7 +85,7 @@ def add_comment():
 
         return redirect("/login")
 
-    comment = request.form.get("comment")
+    comment = request.form.get("comment").strip()
     blog_post_id = request.args.get("blog_post_id")
     author_id = session.get("user_id")
 

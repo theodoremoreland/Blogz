@@ -22,8 +22,8 @@ def require_login():
 def create_post():
     try:
         if request.method == "POST":
-            entry = request.form["entry"]
-            title = request.form["title"]
+            entry = request.form["entry"].strip()
+            title = request.form["title"].strip()
 
             logger.info(f"Creating blog post: {title}\n{entry}...")
 
