@@ -41,11 +41,7 @@ html {
   font-family: sarabun-regular;
   font-size: 16px;
   background: var(--quinary-color);
-  background: radial-gradient(
-    circle farthest-corner at top right,
-    #000000db 0%,
-    #18181c 34%
-  );
+  background: radial-gradient( circle farthest-corner at top right, #000c 0%, #18181c 34% );
 }
 
 body {
