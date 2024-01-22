@@ -7,18 +7,18 @@
     <form action="/login" method="POST">
         <div class="row">
             <label for="username">Username</label>
-            <input name="username" type="text" value="{{ username }}" required>
+            <input id="username" name="username" type="text" value="{{ username }}" required>
         </div>
         <div class="row">
             <label for="password">Password</label>
-            <input name="password" type="password" required autocomplete="current-password">
+            <input id="password" name="password" type="password" required autocomplete="current-password">
         </div>
         <div class="row error">
             <span class="error">{{username_error}}</span>
             <span class="error">{{password_error}}</span>
         </div>
 
-        <button class="primary" type="submit">Log In</button>
+        <button type="submit">Log In</button>
     </form>
 </div>
 {% endblock %}

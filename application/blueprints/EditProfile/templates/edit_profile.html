@@ -6,7 +6,7 @@
 
     <form method='POST' action="/edit-profile">
         <label for="about-me">About</label>
-        <textarea name="about-me" required minlength="10" maxlength="1000">{{about_me}}</textarea>
+        <textarea id="about-me" name="about-me" required minlength="10" maxlength="1000">{{about_me}}</textarea>
         <div class="row error">
             <span class="error">{{about_me_error}}</span>
         </div>
