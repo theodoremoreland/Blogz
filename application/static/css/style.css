@@ -351,10 +351,6 @@ body {
   box-shadow: var(--primary-shadow);
 }
 
-.users .you {
-  color: var(--quaternary-color)
-}
-
 .users .about {
   max-width: 75ch;
   overflow: hidden;
@@ -628,6 +624,10 @@ body {
 #socials img:hover,
 #socials img:active {
   scale: 1.1;
+}
+
+.you {
+  color: var(--quaternary-color) !important;
 }
 
 .error {
