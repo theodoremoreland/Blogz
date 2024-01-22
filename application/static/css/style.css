@@ -433,7 +433,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   margin-bottom: 50px;
   color: var(--tertiary-color);
@@ -441,7 +441,7 @@ body {
 
 .blog-post .title {
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
 
 .blog-post p {
