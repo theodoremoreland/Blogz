@@ -304,9 +304,10 @@ body {
 .users {
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
   gap: 10px;
   height: 100%;
   padding: 0;
@@ -322,12 +323,22 @@ body {
 }
 
 .users > li {
+  flex-basis: 40%;
+  flex-grow: 1;
+  flex-shrink: 1;
   color: var(--tertiary-color);
   padding: 15px 20px;
   border: var(--primary-border);
   border-radius: 4px;
   background-color: var(--secondary-background-color);
   box-shadow: var(--primary-shadow);
+}
+
+.users .about {
+  max-width: 75ch;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .users .header {
@@ -395,6 +406,12 @@ body {
   margin: 0;
   font-family: sarabun-bold;
   letter-spacing: 1.5px;
+}
+
+.blog-preview .entry {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .blog-preview .date {
