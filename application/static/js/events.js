@@ -12,6 +12,7 @@ window.onload = function () {
     "#create-blog-post .link-item"
   );
   const loginAnchor = document.querySelector("#login .link-item");
+  const appNavigation = document.querySelector("#app-navigation");
 
   if (bloggersPathRegex.test(location)) {
     bloggersAnchor.classList.add("selected");
@@ -24,4 +25,12 @@ window.onload = function () {
   } else {
     // do nothing
   }
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 0) {
+      appNavigation.classList.add("opaque");
+    } else {
+      appNavigation.classList.remove("opaque");
+    }
+  });
 };
