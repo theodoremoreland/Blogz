@@ -351,6 +351,10 @@ body {
   box-shadow: var(--primary-shadow);
 }
 
+.users .you {
+  color: var(--quaternary-color)
+}
+
 .users .about {
   max-width: 75ch;
   overflow: hidden;
