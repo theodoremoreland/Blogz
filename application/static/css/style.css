@@ -463,6 +463,8 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
+  box-sizing: border-box;
+  padding: 0 9px;
   margin-bottom: 50px;
   color: var(--tertiary-color);
 }
