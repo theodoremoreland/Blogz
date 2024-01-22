@@ -235,7 +235,7 @@ body {
   margin: 0;
   padding: 25px;
   height: auto;
-  width: clamp(200px, 28%, 50ch);
+  width: clamp(200px, 28%, 75ch);
   text-align: left;
   color: var(--tertiary-color);
   background-color: var(--secondary-background-color);
@@ -281,7 +281,6 @@ body {
 
 .page input,
 .page textarea {
-  width: 25ch;
   background-color: var(--tertiary-color);
   border: transparent 1px solid;
   -webkit-transition: all 200ms linear;
@@ -295,8 +294,13 @@ body {
   border: var(--secondary-color) 1px solid;
 }
 
+.page input {
+  width: 25ch;
+}
+
 .page textarea {
   height: 20ch;
+  width: 100%;
 }
 
 /* ------------------- CREATE BLOG POST ------------------- */
@@ -419,13 +423,6 @@ body {
   margin: 0;
   font-family: sarabun-bold;
   letter-spacing: 1.5px;
-}
-
-.blog-preview .entry {
-  /* max-width: 35ch;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis; */
 }
 
 .blog-preview .date {

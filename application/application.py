@@ -1,7 +1,7 @@
 # Third party
 from flask import Flask
 
-# Models
+# Database
 from db import db
 
 # Blueprints
@@ -11,6 +11,7 @@ from blueprints.Bloggers.views import bloggers
 from blueprints.CreateBlogPost.views import create_blog_post
 from blueprints.Root.views import root
 from blueprints.SignUp.views import signup
+from blueprints.EditProfile.views import edit_profile
 
 
 application = Flask(__name__, instance_relative_config=True)
@@ -22,6 +23,7 @@ application.register_blueprint(bloggers)
 application.register_blueprint(create_blog_post)
 application.register_blueprint(root)
 application.register_blueprint(signup)
+application.register_blueprint(edit_profile)
 
 db.init_app(application)
 

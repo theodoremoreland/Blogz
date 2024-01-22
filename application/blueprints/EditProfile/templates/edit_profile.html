@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="edit-profile-page" class="page">
+    <h1 class="header">Edit Profile</h1>
+
+    <form method='POST' action="/edit-profile">
+        <label for="about-me">About</label>
+        <textarea name="about-me" required minlength="10" maxlength="1000">{{about_me}}</textarea>
+        <div class="row error">
+            <span class="error">{{about_me_error}}</span>
+        </div>
+        <div class="row">
+            <button type="submit" name="action" value="update">Update Profile</button>
+            <button type="submit" name="action" value="delete" class="delete">Delete</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
