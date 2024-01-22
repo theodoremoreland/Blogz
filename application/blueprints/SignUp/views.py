@@ -66,6 +66,17 @@ def render_signup_page():
                     verify_error="Passwords do not match",
                 )
 
+            if about_me == "":
+                return render_template(
+                    "signup.html", about_me_error="Field can not be empty"
+                )
+
+            if len(about_me) > 1000:
+                return render_template(
+                    "signup.html",
+                    about_me_error="About me cannot exceed 1000 characters",
+                )
+
             else:
                 existing_user = Users.query.filter_by(username=username).first()
 
