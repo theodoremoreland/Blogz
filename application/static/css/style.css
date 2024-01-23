@@ -86,6 +86,8 @@ body {
 }
 
 #app-title {
+  overflow: clip;
+  width: 1ch;
   font-family: sarabun-bold;
   font-size: 1.5rem;
   letter-spacing: 2px;
@@ -99,11 +101,24 @@ body {
 #app-navigation ul {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  gap: 30px;
+  width: 100%;
   color: var(--tertiary-color);
   list-style: none;
+}
+
+@media screen and (min-width: 720px) {
+  #app-title {
+    overflow: initial;
+    width: auto;
+  }
+
+  #app-navigation ul {
+    justify-content: space-between;
+    gap: 30px;
+    width: auto;
+  }
 }
 
 #app-navigation .link-item {
@@ -137,15 +152,19 @@ body {
 }
 
 #app-navigation svg {
-  display: none;
   fill: var(--tertiary-color);
   -webkit-transition: all 200ms linear;
   -ms-transition: all 200ms linear;
   transition: all 200ms linear;
 }
 
+#app-navigation span {
+  display: none;
+}
+
 @media screen and (min-width: 1200px) {
-  #app-navigation svg {
+  
+  #app-navigation span {
     display: inline-flex;
   }
 }
