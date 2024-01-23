@@ -169,7 +169,15 @@ def add_comment():
     author_id = session.get("user_id")
 
     try:
-        if len(comment) < 5 or len(comment) > 1000:
+        comments_count = Comments.query.count()
+
+        if comments_count > 500:
+            logger.info("Maximum number of comments reached")
+
+            flash("Maximum number of comments reached for this demo")
+
+            return redirect(f"/blog?blog_post_id={blog_post_id}")
+        elif len(comment) < 5 or len(comment) > 1000:
             comment_error = "Comment must be between 5 and 1000 characters"
             logger.info(comment_error)
 
