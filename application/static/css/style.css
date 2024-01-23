@@ -56,6 +56,22 @@ body {
   width: 100%;
 }
 
+body::-webkit-scrollbar,
+ul::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track,
+ul::-webkit-scrollbar-track {
+  background: var(--quinary-color); /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb,
+ul::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: var(--tertiary-color); /* color of the scroll thumb */
+}
+
 /* ------------------- NAVIGATION ------------------- */
 
 #app-navigation {
