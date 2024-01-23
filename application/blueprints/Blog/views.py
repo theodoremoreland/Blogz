@@ -169,9 +169,9 @@ def add_comment():
     author_id = session.get("user_id")
 
     try:
-        if len(comment) < 5:
-            comment_error = "Comment must be at least 5 characters long"
-            logger.info("Comment has less than 5 characters, redirecting to blog post")
+        if len(comment) < 5 or len(comment) > 1000:
+            comment_error = "Comment must be between 5 and 1000 characters"
+            logger.info(comment_error)
 
             flash(comment_error, "error")
 
