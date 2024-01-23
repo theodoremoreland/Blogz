@@ -137,10 +137,17 @@ body {
 }
 
 #app-navigation svg {
+  display: none;
   fill: var(--tertiary-color);
   -webkit-transition: all 200ms linear;
   -ms-transition: all 200ms linear;
   transition: all 200ms linear;
+}
+
+@media screen and (min-width: 1200px) {
+  #app-navigation svg {
+    display: inline-flex;
+  }
 }
 
 #app-navigation a {
@@ -328,12 +335,13 @@ body {
 .users {
   position: relative;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
   gap: 10px;
   height: 100%;
+  width: 100%;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -347,18 +355,34 @@ body {
 }
 
 .users > li {
-  flex-basis: 25%;
-  flex-grow: 1;
-  flex-shrink: 1;
   color: var(--tertiary-color);
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  box-sizing: border-box;
   padding: 15px 20px;
   border: var(--primary-border);
   border-radius: 4px;
+  width: 100%;
   background-color: var(--secondary-background-color);
   box-shadow: var(--primary-shadow);
+}
+
+@media screen and (min-width: 720px) {
+  .users {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+
+  .users > li {
+    flex-basis: 25%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: auto;
+  }
 }
 
 .users .about {
@@ -382,9 +406,9 @@ body {
 
 .metadata {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   gap: 15px;
   width: 100%;
   margin: 0;
@@ -392,15 +416,17 @@ body {
   list-style: none;
 }
 
-.post-count {
-  font-family: sarabun-light;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
+@media screen and (min-width: 1200px) {
+  .metadata {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
-.since {
+.post-count, .since {
   font-family: sarabun-light;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   letter-spacing: 1px;
 }
 
