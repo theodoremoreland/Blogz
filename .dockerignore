@@ -2,3 +2,4 @@
 **/venv/
 **/*.example**
 **/*_example**
+Dockerfile
