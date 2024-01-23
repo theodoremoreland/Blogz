@@ -51,27 +51,106 @@ def render_blog():
         return render_template("error.html")
 
 
-@blog.route("/delete-blog-post", methods=["POST"])
-def delete_blog_post():
+# TODO: Refactor. Too many if statements. not DRY enough considering the reuse of the same template values and references.
+@blog.route("/edit-blog-post", methods=["POST", "GET"])
+def handle_edit_blog_post():
+    logger.info(f"Request method: {request.method} for edit blog post page")
+
+    username = session.get("username")
     blog_post_id = request.args.get("blog_post_id")
 
+    if username is None:
+        logger.info("User is not logged in. Redirecting to login page...")
+        flash("You must be logged in to edit posts")
+
+        return redirect("/login")
+
+    if blog_post_id is None:
+        logger.info("Blog post not specified. Redirecting to home page...")
+        flash("Blog post not specified")
+
+        return redirect("/")
+
     try:
-        user_id_in_session = session.get("user_id")
-        blog_post = BlogPosts.query.filter_by(id=blog_post_id).first()
+        target_blog_post = BlogPosts.query.filter_by(id=blog_post_id).first()
 
-        if blog_post.author_id == user_id_in_session:
-            db.session.delete(blog_post)
-            db.session.commit()
-        else:
-            logger.info(
-                f"User {user_id_in_session} attempted to delete blog post {blog_post_id} without permission"
-            )
+        if target_blog_post is None:
+            logger.info("Blog post not found. Redirecting to home page...")
+            flash("Blog post not found")
 
-            flash("You do not have permission to delete this post", "error")
+            return redirect("/")
 
-        return redirect("/blog")
+        if request.method == "POST":
+            title = request.form["title"].strip()
+            entry = request.form["entry"].strip()
+            action = request.form["action"]
+
+            if action == "update":
+                logger.info(
+                    f"User: {username} attempting to update blog post: {target_blog_post.title}"
+                )
+
+                if len(title) > 60 or len(title) < 3:
+                    return render_template(
+                        "edit_blog_post.html",
+                        blog_post_id=blog_post_id,
+                        title=title,
+                        entry=entry,
+                        title_error="Title must be between 3 and 60 characters",
+                        entry_error="",
+                    )
+                elif len(entry) > 5000 or len(entry) < 5:
+                    return render_template(
+                        "edit_blog_post.html",
+                        blog_post_id=blog_post_id,
+                        title=title,
+                        entry=entry,
+                        title_error="",
+                        entry_error="Entry must be between 5 and 5000 characters",
+                    )
+                else:
+                    target_blog_post.title = title
+                    target_blog_post.entry = entry
+                    db.session.commit()
+                    flash("Blog post updated!")
+
+                    return render_template(
+                        "blog_post.html",
+                        blog_post=target_blog_post,
+                        comments=target_blog_post.comments,
+                        is_owner=True,
+                    )
+            elif action == "delete":
+                logger.info(
+                    f"User: {username} attempting to delete blog post id: {target_blog_post.id}, title: {title}"
+                )
+
+                db.session.delete(target_blog_post)
+                db.session.commit()
+
+                logger.info(
+                    f"User: {username} deleted blog post id: {target_blog_post.id}, title: {title}"
+                )
+                flash("Blog post deleted!")
+
+                return redirect("/")
+            else:
+                logger.error(f"Action {action} not recognized")
+                flash("Action not recognized")
+
+                return redirect("/")
+
+        # if request.method == "GET"
+        return render_template(
+            "edit_blog_post.html",
+            blog_post_id=target_blog_post.id,
+            title=target_blog_post.title,
+            entry=target_blog_post.entry,
+            title_error="",
+            entry_error="",
+        )
     except Exception as e:
-        logger.exception(f"Error deleting blog post: {e}")
+        logger.exception(f"Error editing blog post: {e}")
 
         return render_template("error.html")
 

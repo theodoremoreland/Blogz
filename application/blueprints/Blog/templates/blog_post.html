@@ -11,9 +11,11 @@
       on {{blog_post.created_at.strftime("%B %d, %Y")}}
     </span>
   </p>
-  <form method="POST" action="/delete-blog-post?blog_post_id={{blog_post.id}}">
-    <button class="delete" type="submit">Delete</button>
-  </form>
+  <div>
+    <a href="/edit-blog-post?blog_post_id={{blog_post.id}}">
+      <button class="delete" type="button" title="Edit blog post">Edit</button>
+    </a>
+  </div>
   {% else %}
   <p class="author">
     written by <a href="/blog?user={{blog_post.author_id}}">{{blog_post.author.username}}</a>

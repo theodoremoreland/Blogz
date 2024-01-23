@@ -303,15 +303,25 @@ body {
   width: 100%;
 }
 
-/* ------------------- CREATE BLOG POST ------------------- */
-#create-blog-post-page {
+/* ------------------- CREATE AND EDIT BLOG POST ------------------- */
+#create-blog-post-page, #update-blog-post-page {
   width: clamp(200px, 50%, 800px);
 }
 
 #create-blog-post-page input,
-#create-blog-post-page textarea {
+#create-blog-post-page textarea,
+#update-blog-post-page input,
+#update-blog-post-page textarea {
   width: 100%;
 }
+
+
+#create-blog-post-page textarea,
+#update-blog-post-page textarea {
+  height: 40ch;
+  width: 100%;
+}
+
 
 /* ------------------- BLOGGERS ------------------- */
 

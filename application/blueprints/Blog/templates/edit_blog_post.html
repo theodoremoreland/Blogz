@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="update-blog-post-page" class="page">
+    <h1 class="header">Edit blog post</h1>
+    <form method='POST' id="update-blog-post" action="/edit-blog-post?blog_post_id={{blog_post_id}}">
+        <input type="text" name='title' value="{{title}}" placeholder="Title" maxlength="60" minlength="3" required />
+        <textarea name="entry" form="update-blog-post" rows="10" cols="21" placeholder="Entry" minlength="5"
+            maxlength="5000" required>{{entry}}</textarea>
+        <div class="row error">
+            <span class="error">{{title_error}}</span>
+            <span class="error">{{entry_error}}</span>
+        </div>
+        <div class="row">
+            <button type="submit" name="action" value="update" title="Update blog post">Update</button>
+            <button type="submit" name="action" value="delete" class="delete" title="Delete blog post">Delete</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
