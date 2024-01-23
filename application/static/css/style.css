@@ -87,7 +87,7 @@ body {
 
 #app-title {
   overflow: clip;
-  width: 1ch;
+  width: 1.2ch;
   font-family: sarabun-bold;
   font-size: 1.5rem;
   letter-spacing: 2px;
