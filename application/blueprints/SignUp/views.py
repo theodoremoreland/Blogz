@@ -80,16 +80,26 @@ def render_signup_page():
             else:
                 existing_user = Users.query.filter_by(username=username).first()
 
-                if not existing_user:
+                if Users.query.count() > 50:
+                    flash(
+                        "Unable to create new user. The maximum number of users for this demo has been reached."
+                    )
+
+                    return redirect("/")
+                elif not existing_user:
                     new_user = Users(username, password, about_me)
+
                     db.session.add(new_user)
                     db.session.commit()
+
                     session["username"] = username
                     session["user_id"] = new_user.id
                     flash("blogz user account created!")
+
                     return redirect("/")
                 else:
                     flash("Username already in use")
+
                     return render_template(
                         "signup.html",
                         username_error="",

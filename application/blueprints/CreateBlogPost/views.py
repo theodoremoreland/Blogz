@@ -37,6 +37,11 @@ def create_post():
                 author = Users.query.filter_by(username=session["username"]).first()
                 blog_post = BlogPosts(title, entry, author)
 
+                if len(author.blog_posts) > 15:
+                    flash("You have reached the maximum number of posts for this demo")
+
+                    return redirect("/blog")
+
                 db.session.add(blog_post)
                 db.session.commit()
 
