@@ -262,7 +262,7 @@ body {
   margin: 0;
   padding: 25px;
   height: auto;
-  width: clamp(200px, 100%, 75ch);
+  width: clamp(200px, 100%, 50ch);
   text-align: left;
   color: var(--tertiary-color);
   background-color: var(--secondary-background-color);
