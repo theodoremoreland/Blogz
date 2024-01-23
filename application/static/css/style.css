@@ -258,10 +258,11 @@ body {
   justify-content: center;
   align-items: center;
   gap: 15px;
+  box-sizing: border-box;
   margin: 0;
   padding: 25px;
   height: auto;
-  width: clamp(200px, 28%, 75ch);
+  width: clamp(200px, 100%, 75ch);
   text-align: left;
   color: var(--tertiary-color);
   background-color: var(--secondary-background-color);
@@ -331,7 +332,7 @@ body {
 
 /* ------------------- CREATE AND EDIT BLOG POST ------------------- */
 #create-blog-post-page, #update-blog-post-page {
-  width: clamp(200px, 50%, 800px);
+  width: clamp(200px, 100%, 800px);
 }
 
 #create-blog-post-page input,
