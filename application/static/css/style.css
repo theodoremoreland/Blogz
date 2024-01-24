@@ -80,7 +80,7 @@ ul::-webkit-scrollbar-thumb {
   top: 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 90%;
   height: 2.8rem;
@@ -97,6 +97,13 @@ ul::-webkit-scrollbar-thumb {
   transition: all 200ms linear;
 }
 
+@media screen and (min-width: 360px) {
+  #app-navigation {
+    justify-content: space-between;
+    gap: initial;
+  }
+}
+
 #app-navigation.opaque {
   background-color: var(--quinary-color);
 }
@@ -105,7 +112,7 @@ ul::-webkit-scrollbar-thumb {
   overflow: clip;
   width: 1.2ch;
   font-family: sarabun-bold;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   letter-spacing: 2px;
   text-decoration: none;
   color: var(--tertiary-color);
@@ -117,17 +124,27 @@ ul::-webkit-scrollbar-thumb {
 #app-navigation ul {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  width: 100%;
+  gap: 3px;
+  width: 85%;
   color: var(--tertiary-color);
   list-style: none;
+}
+
+@media screen and (min-width: 440px) {
+  #app-navigation ul {
+    justify-content: space-around;
+    gap: initial;
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 720px) {
   #app-title {
     overflow: initial;
     width: auto;
+    font-size: 1.5rem;
   }
 
   #app-navigation ul {
