@@ -314,12 +314,29 @@ ul::-webkit-scrollbar-thumb {
   text-align: left;
 }
 
-.page form .row {
+.page form .button-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+.page form .row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 5px;
+  width: 100%;
+}
+
+@media screen and (min-width: 720px) {
+  .page form .row {
+    flex-direction: row;
+    align-items: center;
+    gap: initial;
+  }
 }
 
 .page input,
