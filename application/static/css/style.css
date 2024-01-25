@@ -108,9 +108,7 @@ ul::-webkit-scrollbar-thumb {
   background-color: var(--quinary-color);
 }
 
-#app-title {
-  overflow: clip;
-  width: 1.2ch;
+.app-title {
   font-family: sarabun-bold;
   font-size: 1.3rem;
   letter-spacing: 2px;
@@ -119,6 +117,10 @@ ul::-webkit-scrollbar-thumb {
   -webkit-transition: all 200ms linear;
   -ms-transition: all 200ms linear;
   transition: all 200ms linear;
+}
+
+.app-title.desktop {
+  display: none;
 }
 
 #app-navigation ul {
@@ -141,9 +143,12 @@ ul::-webkit-scrollbar-thumb {
 }
 
 @media screen and (min-width: 720px) {
-  #app-title {
-    overflow: initial;
-    width: auto;
+  .app-title.mobile {
+    display: none;
+  }
+
+  .app-title.desktop {
+    display: inline-flex;
     font-size: 1.5rem;
   }
 
