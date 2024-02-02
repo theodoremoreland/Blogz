@@ -475,8 +475,10 @@ ul::-webkit-scrollbar-thumb {
   gap: 10px;
 }
 
-.users .header svg {
-  fill: var(--tertiary-color);
+.avatar {
+  height: 2rem;
+  width: 2rem;
+  filter: hue-rotate(330deg);
 }
 
 .metadata {
