@@ -510,11 +510,8 @@ ul::-webkit-scrollbar-thumb {
 /* ------------------- BLOGS ------------------- */
 
 .blog-previews {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   width: 100%;
   margin: 0;
@@ -522,8 +519,19 @@ ul::-webkit-scrollbar-thumb {
   list-style: none;
 }
 
+@media screen and (min-width: 720px) {
+  .blog-previews {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .blog-previews {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
 .blog-preview {
-  flex: 1 1 25%;
   color: var(--tertiary-color);
   padding: 15px;
   border: var(--primary-border);
