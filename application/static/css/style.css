@@ -587,6 +587,7 @@ ul::-webkit-scrollbar-thumb {
   margin: 0;
   font-family: sarabun-bold;
   letter-spacing: 1.5px;
+  word-break: break-all;
 }
 
 .blog-preview .date {
@@ -617,6 +618,7 @@ ul::-webkit-scrollbar-thumb {
 
 .blog-user .user {
   margin: 0;
+  word-break: break-all;
 }
 
 .blog-user svg {
