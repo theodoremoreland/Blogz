@@ -92,4 +92,4 @@ Visit: http://localhost:5000 to use the application.
 
 ### Home / Bloggers Page (Logged in)
 
-<img src="presentation/1.PNG" width="900">
+<img src="presentation/thumbnail.png" width="800">
