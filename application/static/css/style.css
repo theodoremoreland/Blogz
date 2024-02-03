@@ -511,12 +511,18 @@ ul::-webkit-scrollbar-thumb {
 
 .blog-previews {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 20px;
   width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+@media screen and (min-width: 540px) {
+  .blog-previews {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media screen and (min-width: 720px) {
