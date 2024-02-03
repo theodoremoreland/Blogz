@@ -6,10 +6,13 @@
     <div class="header">
         <img src="../../../static/images/icons/avatar.gif" alt="{{user.username}}'s avatar" class="avatar">
         {% if user.username == session['username'] %}
-        <a class="user you" href="/edit-profile" title="You">{{user.username}} (You)</a>
+        <a class="user you" href="/edit-profile" title="You">
+            <h1>{{user.username}} (You)</h1>
+        </a>
         {% else %}
-        <span class="user">{{user.username}}</span>
+        <h1 class="user">{{user.username}}</h1>
         {% endif %}
+        <div class="bg-image"></div>
     </div>
     <p class="about">{{user.about_me}}</p>
     <div class="metadata">
@@ -22,9 +25,9 @@
 <ul class="blog-previews">
     {% for blog_post in blog %}
     <li class="blog-preview">
-        <h2 class="title">
+        <h3 class="title">
             <a href="/blog?blog_post_id={{blog_post.id}}">{{blog_post.title}}</a>
-        </h2>
+        </h3>
         {% if blog_post.entry|length > 75 %}
         <p class="entry">
             {{ blog_post.entry[:75] | trim }}...
@@ -53,6 +56,7 @@
                 </a>
             </span>
         </div>
+        <div class="bg-image"></div>
     </li>
     {% endfor %}
 </ul>

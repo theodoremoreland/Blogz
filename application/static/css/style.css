@@ -41,7 +41,8 @@ html {
   font-family: sarabun-regular;
   font-size: 16px;
   background: var(--quinary-color);
-  background: radial-gradient( circle farthest-corner at top right, #000c 0%, #18181c 34% );
+  /* background: radial-gradient( circle farthest-corner at top right, #000c 0%, #18181c 34% ); */
+  background: radial-gradient(circle farthest-corner at top left,rgb(255, 95, 104) -606%,#000001 70%);
 }
 
 body {
@@ -430,6 +431,7 @@ ul::-webkit-scrollbar-thumb {
 }
 
 .users > li {
+  position: relative;
   color: var(--tertiary-color);
   overflow: hidden;
   white-space: nowrap;
@@ -441,6 +443,20 @@ ul::-webkit-scrollbar-thumb {
   width: 100%;
   background-color: var(--secondary-background-color);
   box-shadow: var(--primary-shadow);
+}
+
+.users > li .bg-image {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url("../images/background/abstract.jpeg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.03;
 }
 
 @media screen and (min-width: 720px) {
@@ -478,7 +494,7 @@ ul::-webkit-scrollbar-thumb {
 .avatar {
   height: 2rem;
   width: 2rem;
-  filter: hue-rotate(330deg);
+  mix-blend-mode: luminosity;
 }
 
 .metadata {
@@ -538,12 +554,33 @@ ul::-webkit-scrollbar-thumb {
 }
 
 .blog-preview {
+  position: relative;
   color: var(--tertiary-color);
   padding: 15px;
   border: var(--primary-border);
   border-radius: 4px;
   background-color: var(--secondary-background-color);
   box-shadow: var(--primary-shadow);
+}
+
+.blog-preview .bg-image, .blog-user .bg-image {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  opacity: 0.1;
+}
+
+.blog-preview .bg-image {
+  background-image: url("../images/background/keyboard.jpg");
+  filter: blur(25px);
+  opacity: 0.2;
 }
 
 .blog-preview .title {
@@ -559,6 +596,7 @@ ul::-webkit-scrollbar-thumb {
 }
 
 .blog-user {
+  position: relative;
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
@@ -577,8 +615,16 @@ ul::-webkit-scrollbar-thumb {
   gap: 10px;
 }
 
+.blog-user .user {
+  margin: 0;
+}
+
 .blog-user svg {
   fill: var(--tertiary-color);
+}
+
+.blog-user .bg-image {
+  background-image: url("../images/background/abstract.jpeg");
 }
 
 .blog-post {
