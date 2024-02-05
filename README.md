@@ -13,6 +13,8 @@ _This was originally a homework assignment for LaunchCode's Lc101 (2018)_
   - [Run on Windows](#run-on-windows)
   - [Run on Docker](#run-on-docker)
 - [Screenshots](#screenshots)
+  - [Desktop](#desktop)
+  - [Mobile](#mobile)
 
 ## Technologies Used
 
