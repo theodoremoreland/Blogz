@@ -88,8 +88,60 @@ docker compose up --build
 
 Visit: http://localhost:5000 to use the application.
 
-## Screenshots
+# Screenshots
 
-### Home / Bloggers Page (Logged in)
+## Desktop
 
-<img src="presentation/thumbnail.png" width="800">
+### Home / Bloggers Page
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/1.png" width="800">
+
+### User page
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/2.png" width="800">
+
+### Blog
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/3.png" width="800">
+
+### All blogs
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/4.png" width="800">
+
+### All blogs (scrolled down)
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/5.png" width="800">
+
+### Log in page
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/10.png" width="800">
+
+### Sign up page
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/11.png" width="800">
+
+## Mobile
+
+### Home page / Bloggers
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/6.png" width="300">
+
+### Home page / Bloggers (scrolled down)
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/7.png" width="300">
+
+### All blogs
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/8.png" width="300">
+
+### All blogs (scrolled down)
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/9.png" width="300">
+
+### Log in page
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/12.png" width="300">
+
+### Sign up page
+
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/13.png" width="300">
