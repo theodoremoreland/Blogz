@@ -21,7 +21,11 @@ def render_blog():
     )
     try:
         if user_id:
-            user_blog = BlogPosts.query.filter_by(author_id=user_id).all()
+            user_blog = (
+                BlogPosts.query.filter_by(author_id=user_id)
+                .order_by(BlogPosts.created_at.desc())
+                .all()
+            )
             user = Users.query.filter_by(id=user_id).first()
 
             return render_template("blog.html", blog=user_blog, scope="user", user=user)
