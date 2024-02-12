@@ -42,7 +42,7 @@ def render_blog():
                 is_owner=author_id == user_id_in_session,
             )
         else:
-            all_blog_posts = BlogPosts.query.all()
+            all_blog_posts = BlogPosts.query.order_by(BlogPosts.created_at.desc()).all()
 
             return render_template("blog.html", blog=all_blog_posts, scope="all")
     except Exception as e:
