@@ -13,7 +13,7 @@ def render_bloggers_page():
     logger.info("Rendering bloggers page")
 
     try:
-        users = Users.query.all()
+        users = Users.query.order_by(Users.username).all()
         post_count_by_user = {}
 
         for user in users:
