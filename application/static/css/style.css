@@ -28,7 +28,7 @@
   --tertiary-color: rgb(219, 222, 227);
   --quaternary-color: rgb(255, 95, 104);
   --quinary-color: #18181c;
-  --primary-border: solid rgba(219, 222, 227, 0.158) 1px;
+  --primary-border: solid rgba(219, 222, 227, 0.071) 1px;
   --primary-shadow: box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   --secondary-background-color: #18181c45;
 }
@@ -453,10 +453,10 @@ ul::-webkit-scrollbar-thumb {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-image: url("../images/background/abstract.jpeg");
+  background: radial-gradient(circle farthest-corner at top,rgb(255, 95, 104) -606%,#000001 70%);
   background-size: cover;
   background-position: center;
-  opacity: 0.03;
+  opacity: 0.65;
 }
 
 @media screen and (min-width: 720px) {
@@ -578,9 +578,8 @@ ul::-webkit-scrollbar-thumb {
 }
 
 .blog-preview .bg-image {
-  background-image: url("../images/background/keyboard.jpg");
-  filter: blur(25px);
-  opacity: 0.2;
+  background: radial-gradient(circle farthest-corner at top,rgb(255, 95, 104) -606%,#000001 70%);
+  opacity: 0.65;
 }
 
 .blog-preview .title {
