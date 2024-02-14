@@ -7,7 +7,8 @@
     {% for user in users_list %}
     <li>
         <div class="header">
-            <img src="../../../static/images/icons/avatar.gif" alt="{{user.username}}'s avatar" class="avatar">
+            <img src="{{user.avatar_url}}" alt="{{user.username}}'s avatar" class="avatar"
+                onerror="this.onerror=null;this.src='../../../static/images/icons/avatar.gif';">
             {% if user.username == session['username'] %}
             <a class="user you" href="/blog?user={{user.id}}" title="You">{{user.username}} (You)</a>
             {% else %}

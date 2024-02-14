@@ -4,7 +4,8 @@
 {% if scope == 'user' %}
 <div class="blog-user">
     <div class="header">
-        <img src="../../../static/images/icons/avatar.gif" alt="{{user.username}}'s avatar" class="avatar">
+        <img src="{{user.avatar_url}}" alt="{{user.username}}'s avatar" class="avatar lg"
+            onerror="this.onerror=null;this.src='../../../static/images/icons/avatar.gif';">
         {% if user.username == session['username'] %}
         <a class="user you" href="/edit-profile" title="You">
             <h1>{{user.username}} (You)</h1>

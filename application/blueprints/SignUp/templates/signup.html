@@ -17,6 +17,10 @@
             <label for="verify-password">Verify Password</label>
             <input id="verify-password" type="password" name="verify-password" autocomplete="off" value required>
         </div>
+        <div class="row">
+            <label for="avatar-url">Avatar URL</label>
+            <input id="avatar-url" type="text" name="avatar-url" autocomplete="off" value>
+        </div>
         <label for="about-me">About</label>
         <textarea id="about-me" name="about-me" placeholder="Tell us about yourself!" required minlength="10"
             maxlength="1000"></textarea>
@@ -24,6 +28,7 @@
             <span class="error">{{username_error}}</span>
             <span class="error">{{password_error}}</span>
             <span class="error">{{verify_error}}</span>
+            <span class="error">{{avatar_url_error}}</span>
             <span class="error">{{about_me_error}}</span>
         </div>
 

@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, redirect, session, flash
 
 from db.models import db, Users
 from modules.logger import logger
+from utils.validate_image_url import validate_image_url
 
 signup = Blueprint(
     "signup", __name__, template_folder="templates", static_folder="static"
@@ -23,6 +24,7 @@ def render_signup_page():
             username = request.form["username"].strip()
             password = request.form["password"]
             verify = request.form["verify-password"]
+            avatar_url = request.form["avatar-url"].strip()
             about_me = request.form["about-me"].strip()
 
             logger.info(
@@ -66,6 +68,9 @@ def render_signup_page():
                     verify_error="Passwords do not match",
                 )
 
+            if validate_image_url(avatar_url) == False:
+                return render_template("signup.html", avatar_url_error="Invalid URL")
+
             if about_me == "":
                 return render_template(
                     "signup.html", about_me_error="Field can not be empty"
@@ -87,7 +92,7 @@ def render_signup_page():
 
                     return redirect("/")
                 elif not existing_user:
-                    new_user = Users(username, password, about_me)
+                    new_user = Users(username, password, about_me, avatar_url)
 
                     db.session.add(new_user)
                     db.session.commit()

@@ -5,9 +5,14 @@
     <h1 class="header">Edit Profile</h1>
 
     <form method='POST' action="/edit-profile">
+        <div class="row">
+            <label for="avatar-url">Avatar URL</label>
+            <input id="avatar-url" type="text" name="avatar-url" autocomplete="off" value="{{avatar_url}}">
+        </div>
         <label for="about-me">About</label>
         <textarea id="about-me" name="about-me" required minlength="10" maxlength="1000">{{about_me}}</textarea>
         <div class="row error">
+            <span class="error">{{avatar_url_error}}</span>
             <span class="error">{{about_me_error}}</span>
         </div>
         <div class="button-container">
