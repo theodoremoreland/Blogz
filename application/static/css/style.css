@@ -492,8 +492,8 @@ ul::-webkit-scrollbar-thumb {
 }
 
 .avatar {
-  height: 2rem;
-  width: 2rem;
+  height: 2.8rem;
+  width: 2.8rem;
   mix-blend-mode: luminosity;
 }
 
