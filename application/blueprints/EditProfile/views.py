@@ -91,7 +91,7 @@ def handle_edit_profile():
         return render_template(
             "edit_profile.html",
             about_me=existing_user.about_me,
-            avatar_url=existing_user.avatar_url,
+            avatar_url=existing_user.avatar_url if existing_user.avatar_url else "",
             about_me_error="",
             avatar_url_error="",
         )
