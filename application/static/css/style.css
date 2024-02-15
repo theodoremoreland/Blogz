@@ -492,15 +492,15 @@ ul::-webkit-scrollbar-thumb {
 }
 
 .avatar {
-  height: 2.8rem;
-  width: 2.8rem;
+  height: 3.3rem;
+  width: 3.3rem;
   border-radius: 150px;
   mix-blend-mode: luminosity;
 }
 
 .avatar.lg {
-  height: 4rem;
-  width: 4rem;
+  height: 4.25rem;
+  width: 4.25rem;
 }
 
 .metadata {
