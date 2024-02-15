@@ -495,7 +495,6 @@ ul::-webkit-scrollbar-thumb {
   height: 3.3rem;
   width: 3.3rem;
   border-radius: 150px;
-  mix-blend-mode: luminosity;
 }
 
 .avatar.lg {
