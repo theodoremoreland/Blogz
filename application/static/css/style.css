@@ -82,7 +82,7 @@ html {
 
 .bg-animated::after {
   animation: leftward 160s linear infinite;
-  clip-path: polygon(75% 0%, 100% 0%, 25% 100%, 0% 100%);
+  clip-path: polygon(84% 0%, 100% 0%, 16% 100%, 0% 100%);
 }
 
 @keyframes leftward {
