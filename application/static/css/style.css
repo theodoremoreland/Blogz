@@ -43,6 +43,7 @@ html {
   background: var(--quinary-color);
   /* background: radial-gradient( circle farthest-corner at top right, #000c 0%, #18181c 34% ); */
   background: radial-gradient(circle farthest-corner at top left,rgb(255, 95, 104) -606%,#000001 70%);
+  overflow-x: hidden;
 }
 
 body {
@@ -58,6 +59,10 @@ body {
   overflow-x: hidden;
 }
 
+/**
+  * The following pseudo-elements are used to create slated elements
+  * that move from right to left indefinitely to create a background effect
+  */
 body::before,
 body::after {
   pointer-events: none;
@@ -65,20 +70,20 @@ body::after {
   content: "";
   top: 0;
   height: 100%;
-  width: 20%;
+  width: 25%;
   background-color: var(--secondary-background-color);
-  opacity: 0.4;
   z-index: -1;
-  clip-path: polygon(60% 0%, 100% 0%, 40% 100%, 0% 100%);
 }
 
 body::before {
-  width: 25%;
+  width: 35%;
   animation: leftward 40s linear infinite;
+  clip-path: polygon(60% 0%, 100% 0%, 40% 100%, 0% 100%);
 }
 
 body::after {
   animation: leftward 160s linear infinite;
+  clip-path: polygon(75% 0%, 100% 0%, 25% 100%, 0% 100%);
 }
 
 @keyframes leftward {
@@ -89,8 +94,6 @@ body::after {
     left: -100%;
   }
 }
-
-
 
 body::-webkit-scrollbar,
 ul::-webkit-scrollbar {
