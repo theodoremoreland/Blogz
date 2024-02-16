@@ -36,6 +36,7 @@
 /* ------------------- GLOBAL ------------------- */
 
 html {
+  position: relative;
   min-height: 100vh;
   width: 100%;
   font-family: sarabun-regular;
@@ -44,6 +45,42 @@ html {
   /* background: radial-gradient( circle farthest-corner at top right, #000c 0%, #18181c 34% ); */
   background: radial-gradient(circle farthest-corner at top left,rgb(255, 95, 104) -606%,#000001 70%);
   overflow-x: hidden;
+}
+
+/**
+* The following pseudo-elements are used to create slated elements
+* that move from right to left indefinitely to create a background effect
+*/
+html::before,
+html::after {
+  pointer-events: none;
+  position: absolute;
+  content: "";
+  top: 0;
+  height: 100%;
+  width: 25%;
+  background-color: var(--secondary-background-color);
+  z-index: -1;
+}
+
+html::before {
+  width: 35%;
+  animation: leftward 40s linear infinite;
+  clip-path: polygon(60% 0%, 100% 0%, 40% 100%, 0% 100%);
+}
+
+html::after {
+  animation: leftward 160s linear infinite;
+  clip-path: polygon(75% 0%, 100% 0%, 25% 100%, 0% 100%);
+}
+
+@keyframes leftward {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
 }
 
 body {
@@ -56,43 +93,6 @@ body {
   padding: 0;
   min-height: 100vh;
   width: 100%;
-  overflow-x: hidden;
-}
-
-/**
-  * The following pseudo-elements are used to create slated elements
-  * that move from right to left indefinitely to create a background effect
-  */
-body::before,
-body::after {
-  pointer-events: none;
-  position: absolute;
-  content: "";
-  top: 0;
-  height: 100%;
-  width: 25%;
-  background-color: var(--secondary-background-color);
-  z-index: -1;
-}
-
-body::before {
-  width: 35%;
-  animation: leftward 40s linear infinite;
-  clip-path: polygon(60% 0%, 100% 0%, 40% 100%, 0% 100%);
-}
-
-body::after {
-  animation: leftward 160s linear infinite;
-  clip-path: polygon(75% 0%, 100% 0%, 25% 100%, 0% 100%);
-}
-
-@keyframes leftward {
-  0% {
-    left: 100%;
-  }
-  100% {
-    left: -100%;
-  }
 }
 
 body::-webkit-scrollbar,
