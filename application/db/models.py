@@ -18,7 +18,7 @@ class BlogPosts(db.Model):
 class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=True)
-    password = db.Column(db.String(20))
+    password = db.Column(db.String(100))
     about_me = db.Column(db.String(1000))
     avatar_url = db.Column(db.String(160))
     member_since = db.Column(db.DateTime, server_default=db.func.now())
