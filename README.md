@@ -24,6 +24,7 @@ _This was originally a homework assignment for LaunchCode's Lc101 (2018)_
 - PostgreSQL
 - HTML/CSS
 - Docker
+- bcrypt
 
 # How to run locally
 
