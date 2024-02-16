@@ -27,10 +27,11 @@ class Users(db.Model):
     )  # refers to name of model / class not table
     comments = db.relationship("Comments", backref="author")
 
-    def __init__(self, username, password, about_me):
+    def __init__(self, username, password, about_me, avatar_url):
         self.username = username
         self.password = password
         self.about_me = about_me
+        self.avatar_url = avatar_url
 
 
 class Comments(db.Model):
