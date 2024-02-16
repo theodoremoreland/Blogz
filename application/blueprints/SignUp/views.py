@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, session, flash
+import bcrypt
 
 from db.models import db, Users
 from modules.logger import logger
@@ -92,7 +93,11 @@ def render_signup_page():
 
                     return redirect("/")
                 elif not existing_user:
-                    new_user = Users(username, password, about_me, avatar_url)
+                    password_bytes = password.encode("utf-8")
+                    salt = bcrypt.gensalt()
+                    password_hash = bcrypt.hashpw(password_bytes, salt).decode("utf-8")
+
+                    new_user = Users(username, password_hash, about_me, avatar_url)
 
                     db.session.add(new_user)
                     db.session.commit()

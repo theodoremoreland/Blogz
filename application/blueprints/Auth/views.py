@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, session, flash
+import bcrypt
 
 from db.models import Users
 from modules.logger import logger
@@ -25,7 +26,9 @@ def login():
 
         user = Users.query.filter_by(username=username).first()
 
-        if user and user.password == password:
+        if user and bcrypt.checkpw(
+            password.encode("utf-8"), user.password.encode("utf-8")
+        ):
             session["username"] = username
             session["user_id"] = user.id
 
