@@ -7,7 +7,9 @@
     <form method='POST' action="/edit-profile">
         <div class="row">
             <label for="avatar-url">Avatar URL</label>
-            <input id="avatar-url" type="text" name="avatar-url" autocomplete="off" value="{{avatar_url}}">
+            <input id="avatar-url" type="url" name="avatar-url"
+                title="The URL must be for an image of type jpg, jpeg, or png" pattern=".*[.](jpeg|jpg|png) *$"
+                autocomplete="off" value="{{avatar_url}}">
         </div>
         <label for="about-me">About</label>
         <textarea id="about-me" name="about-me" required minlength="10" maxlength="1000">{{about_me}}</textarea>
