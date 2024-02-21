@@ -4,7 +4,7 @@ A rudimentary Python (Flask) web application where multiple users can create the
 
 _This was originally a homework assignment for LaunchCode's Lc101 (2018)_
 
-<img src="presentation/thumbnail.jpg" width="700">
+<img src="presentation/thumbnail.png" width="700">
 
 # Table of contents
 
@@ -97,54 +97,54 @@ Visit: http://localhost:5000 to use the application.
 
 ### Home / Bloggers Page
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/1.jpg" width="800">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/1.png" width="800">
 
 ### User page
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/2.jpg" width="800">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/2.png" width="800">
 
 ### Blog
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/3.jpg" width="800">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/3.png" width="800">
 
 ### All blogs
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/4.jpg" width="800">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/4.png" width="800">
 
 ### All blogs (scrolled down)
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/5.jpg" width="800">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/5.png" width="800">
 
 ### Log in page
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/10.jpg" width="800">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/10.png" width="800">
 
 ### Sign up page
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/11.jpg" width="800">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/11.png" width="800">
 
 ## Mobile
 
 ### Home page / Bloggers
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/6.jpg" width="300">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/6.png" width="300">
 
 ### Home page / Bloggers (scrolled down)
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/7.jpg" width="300">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/7.png" width="300">
 
 ### All blogs
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/8.jpg" width="300">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/8.png" width="300">
 
 ### All blogs (scrolled down)
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/9.jpg" width="300">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/9.png" width="300">
 
 ### Log in page
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/12.jpg" width="300">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/12.png" width="300">
 
 ### Sign up page
 
-<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/13.jpg" width="300">
+<img src="https://dj8eg5xs13hf6.cloudfront.net/blogz/13.png" width="300">
