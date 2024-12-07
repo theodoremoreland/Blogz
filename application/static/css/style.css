@@ -28,8 +28,11 @@
   --tertiary-color: rgb(219, 222, 227);
   --quaternary-color: rgb(255, 95, 104);
   --quinary-color: #18181c;
+
   --primary-border: solid rgba(219, 222, 227, 0.071) 1px;
+
   --primary-shadow: box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
   --secondary-background-color: #18181c45;
 }
 
@@ -42,7 +45,6 @@ html {
   font-family: sarabun-regular;
   font-size: 16px;
   background: var(--quinary-color);
-  /* background: radial-gradient( circle farthest-corner at top right, #000c 0%, #18181c 34% ); */
   background: radial-gradient(circle farthest-corner at top left,rgb(255, 95, 104) -606%,#000001 70%);
   overflow-x: hidden;
 }
