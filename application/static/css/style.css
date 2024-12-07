@@ -23,10 +23,10 @@
 /* ------------------- VARIABLES ------------------- */
 
 :root {
-  --primary-color: rgb(14, 17, 40);
-  --secondary-color: rgb(0, 171, 245);
-  --tertiary-color: rgb(219, 222, 227);
-  --quaternary-color: rgb(255, 95, 104);
+  --primary-color: #0e1128;
+  --secondary-color: #00abf5;
+  --tertiary-color: #dbdee3;
+  --quaternary-color: #ff5f68;
   --quinary-color: #18181c;
 
   --primary-border: solid rgba(219, 222, 227, 0.071) 1px;
