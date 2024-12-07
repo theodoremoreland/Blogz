@@ -8,7 +8,7 @@
     <li>
         <div class="header">
             <img src="{{user.avatar_url}}" alt="{{user.username}}'s avatar" class="avatar"
-                onerror="this.onerror=null;this.src='../../../static/images/icons/avatar.gif';">
+                onerror="this.onerror=null;this.src='../../../static/images/icons/avatar.png';">
             {% if user.username == session['username'] %}
             <a class="user you" href="/blog?user={{user.id}}" title="You">{{user.username}} (You)</a>
             {% else %}

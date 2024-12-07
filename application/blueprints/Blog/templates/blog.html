@@ -5,7 +5,7 @@
 <div class="blog-user">
     <div class="header">
         <img src="{{user.avatar_url}}" alt="{{user.username}}'s avatar" class="avatar lg"
-            onerror="this.onerror=null;this.src='../../../static/images/icons/avatar.gif';">
+            onerror="this.onerror=null;this.src='../../../static/images/icons/avatar.png';">
         {% if user.username == session['username'] %}
         <a class="user you" href="/edit-profile" title="You">
             <h1>{{user.username}} (You)</h1>
