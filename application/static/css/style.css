@@ -45,7 +45,7 @@ html {
   font-family: sarabun-regular;
   font-size: 16px;
   background: var(--quinary-color);
-  background: radial-gradient(circle farthest-corner at top left,rgb(255, 95, 104) -606%,#000001 70%);
+  /* background: radial-gradient(circle farthest-corner at top left,rgb(255, 95, 104) -606%,#000001 70%); */
   overflow-x: hidden;
 }
 
@@ -232,7 +232,7 @@ ul::-webkit-scrollbar-thumb {
 #app-navigation .link-item:active,
 #app-navigation .link-item.selected {
   color: var(--quinary-color);
-  background-color: var(--quaternary-color);
+  background-color: var(--secondary-color);
 }
 
 #app-navigation .link-item:hover svg,
@@ -462,12 +462,9 @@ ul::-webkit-scrollbar-thumb {
 
 .users {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+  gap: 14px;
   height: 100%;
   width: 100%;
   padding: 0;
@@ -485,7 +482,6 @@ ul::-webkit-scrollbar-thumb {
 .users > li {
   position: relative;
   color: var(--tertiary-color);
-  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   box-sizing: border-box;
@@ -508,24 +504,8 @@ ul::-webkit-scrollbar-thumb {
   background: radial-gradient(circle farthest-corner at top,rgb(255, 95, 104) -606%,#000001 70%);
   background-size: cover;
   background-position: center;
+  filter: blur(5px);
   opacity: 0.65;
-}
-
-@media screen and (min-width: 720px) {
-  .users {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-
-  .users > li {
-    flex-basis: 25%;
-    flex-grow: 1;
-    flex-shrink: 1;
-    width: auto;
-  }
 }
 
 .users .about {
