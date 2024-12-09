@@ -38,7 +38,7 @@
 
     --radial-gradient: radial-gradient(
         circle farthest-corner at top,
-        rgba(255, 95, 103, 0.75) -606%,
+        #00acf59e -606%,
         #000001 70%
     );
 }
