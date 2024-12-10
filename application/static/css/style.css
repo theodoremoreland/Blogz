@@ -498,7 +498,7 @@ a.featured-container {
     svg {
         height: 1.5em;
         fill: var(--tertiary-color);
-        margin-bottom: -5px;
+        margin-bottom: -7px;
     }
 
     .prompt-area {
@@ -725,7 +725,9 @@ a.featured-container {
 }
 
 .blog-user .bg-image {
-    background-image: url("../images/background/abstract.jpeg");
+    background-image: url("../images/background/abstract.jpg");
+    filter: hue-rotate(-44deg) blur(4px) contrast(2);
+    opacity: 0.45;
 }
 
 .blog-post {
