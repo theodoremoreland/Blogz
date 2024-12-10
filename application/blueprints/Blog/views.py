@@ -28,12 +28,21 @@ def render_blog():
             )
             user = Users.query.filter_by(id=user_id).first()
 
-            return render_template("blog.html", blog=user_blog, scope="user", user=user)
+            featured_blog = user_blog[0] if user_blog else None
+
+            return render_template(
+                "blog.html",
+                blog=user_blog,
+                scope="user",
+                user=user,
+                featured_blog=featured_blog,
+            )
         elif blog_post_id:
             blog_post = BlogPosts.query.filter_by(id=blog_post_id).first()
             comments = blog_post.comments
             author_id = str(blog_post.author_id)
             user_id_in_session = str(session.get("user_id"))
+            featured_blog = blog_post[0] if blog_post else None
 
             logger.info(
                 f"Rendering blog post with blog_post_id: {blog_post_id} and author_id: {author_id} as user_id: {user_id_in_session}"
@@ -44,11 +53,18 @@ def render_blog():
                 blog_post=blog_post,
                 comments=comments,
                 is_owner=author_id == user_id_in_session,
+                featured_blog=featured_blog,
             )
         else:
             all_blog_posts = BlogPosts.query.order_by(BlogPosts.created_at.desc()).all()
+            featured_blog = all_blog_posts[0] if all_blog_posts else None
 
-            return render_template("blog.html", blog=all_blog_posts, scope="all")
+            return render_template(
+                "blog.html",
+                blog=all_blog_posts,
+                scope="all",
+                featured_blog=featured_blog,
+            )
     except Exception as e:
         logger.exception(f"Error rendering blog page: {e}")
 

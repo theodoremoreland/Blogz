@@ -20,7 +20,7 @@ def render_bloggers_page():
             post_count = len(user.blog_posts)
             post_count_by_user[user.id] = post_count
 
-        featured_user = users[6] if users else None
+        featured_user = users[0] if users else None
 
         return render_template(
             "bloggers.html",

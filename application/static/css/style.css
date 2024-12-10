@@ -441,7 +441,7 @@ a.featured-container {
     }
 }
 
-.featured.user {
+.featured {
     position: relative;
     display: flex;
     flex-direction: column;

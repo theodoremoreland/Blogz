@@ -22,6 +22,23 @@
     </div>
 </div>
 {% endif %}
+{% if featured_blog %}
+<a class="featured-container" href="/blog?blog_post_id={{featured_blog.id}}">
+    <div class="featured blog">
+        <h2>Featured blog</h2>
+        <span class="title">{{featured_blog.title}}</span>
+        {% if featured_blog.entry|length > 350 %}
+        <p class="entry">
+            {{ featured_blog.entry[:350] | trim }}...
+        </p>
+        {% else %}
+        <p class="entry">
+            {{ featured_blog.entry | trim}}
+        </p>
+        {% endif %}
+    </div>
+</a>
+{% endif %}
 {% if blog|length > 0 %}
 <ul class="blog-previews">
     {% for blog_post in blog %}
