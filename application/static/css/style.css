@@ -31,8 +31,8 @@
 
     --primary-border: solid rgba(219, 222, 227, 0.071) 1px;
 
-    --primary-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
-        rgba(0, 0, 0, 0.13) 0px 3px 6px;
+    --primary-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px,
+        rgba(0, 0, 0, 0.1) 0px 3px 5px;
 
     --secondary-background-color: #18181c45;
 
@@ -69,53 +69,6 @@ html {
     background-position: center;
     filter: blur(4px);
     opacity: 0.35;
-}
-
-.bg-animated {
-    pointer-events: none;
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    overflow-x: hidden;
-}
-
-/**
-* The following pseudo-elements are used to create slated elements
-* that move from right to left indefinitely to create a background effect
-*/
-.bg-animated::before,
-.bg-animated::after {
-    pointer-events: none;
-    position: absolute;
-    content: "";
-    top: 0;
-    height: 100%;
-    width: 25%;
-    background-color: var(--secondary-background-color);
-    z-index: -1;
-}
-
-.bg-animated::before {
-    width: 35%;
-    animation: leftward 40s linear infinite;
-    clip-path: polygon(60% 0%, 100% 0%, 40% 100%, 0% 100%);
-}
-
-.bg-animated::after {
-    animation: leftward 160s linear infinite;
-    clip-path: polygon(84% 0%, 100% 0%, 16% 100%, 0% 100%);
-}
-
-@keyframes leftward {
-    0% {
-        left: 100%;
-    }
-    100% {
-        left: -100%;
-    }
 }
 
 body {
