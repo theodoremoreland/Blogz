@@ -2,6 +2,15 @@
 
 {% block content %}
 
+{% if featured_user %}
+<a class="featured-container" href="/blog?user={{featured_user.id}}">
+    <div class="featured user">
+        <h2>Featured user</h2>
+        <p class="about">{{featured_user.about_me}}</p>
+        <span class="user">@{{featured_user.username}}</span>
+    </div>
+</a>
+{% endif %}
 {% if users_list|length > 0 %}
 <ul class="users">
     {% for user in users_list %}

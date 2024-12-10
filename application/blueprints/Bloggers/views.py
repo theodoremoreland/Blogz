@@ -20,8 +20,13 @@ def render_bloggers_page():
             post_count = len(user.blog_posts)
             post_count_by_user[user.id] = post_count
 
+        featured_user = users[6] if users else None
+
         return render_template(
-            "bloggers.html", users_list=users, post_count_by_user=post_count_by_user
+            "bloggers.html",
+            users_list=users,
+            post_count_by_user=post_count_by_user,
+            featured_user=featured_user,
         )
     except Exception as e:
         logger.exception(f"Error rendering bloggers page: {e}")

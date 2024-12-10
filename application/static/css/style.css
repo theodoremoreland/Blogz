@@ -433,6 +433,68 @@ ul::-webkit-scrollbar-thumb {
 
 /* ------------------- BLOGGERS ------------------- */
 
+a.featured-container {
+    width: 100%;
+
+    &:hover {
+        filter: none !important;
+    }
+}
+
+.featured.user {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 14px;
+    width: 100%;
+    height: clamp(250px, 25vh, 700px);
+    color: var(--tertiary-color);
+    font-size: larger;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    margin-bottom: 14px;
+    border-radius: 4px;
+    background: var(--secondary-background-color);
+    background: linear-gradient(
+        110deg,
+        rgb(4, 16, 32) 0%,
+        rgb(1, 59, 124) 28%,
+        rgb(0, 123, 194) 48%,
+        rgb(0, 82, 121) 85%,
+        rgb(0, 90, 142) 100%
+    );
+    /* background-image: linear-gradient(
+        96deg,
+        var(--quaternary-color) 7.63%,
+        var(--primary-color) 37.94%,
+        #00d2e5 65.23%,
+        var(--secondary-color) 92.12%
+    ); */
+    box-shadow: var(--primary-shadow);
+    transition: all 200ms linear;
+
+    &:hover {
+        -webkit-box-shadow: 0px 0px 12px 2px rgba(0, 172, 245, 1);
+        -moz-box-shadow: 0px 0px 12px 2px rgba(0, 172, 245, 1);
+        box-shadow: 0px 0px 12px 2px rgba(0, 172, 245, 1);
+    }
+
+    & > * {
+        padding: 0;
+        margin: 0;
+    }
+
+    & > h2 {
+        font-family: sarabun-bold;
+    }
+
+    & > p {
+        max-width: 150ch;
+    }
+}
+
 .users {
     position: relative;
     display: grid;
