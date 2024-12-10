@@ -5,9 +5,17 @@
 {% if featured_user %}
 <a class="featured-container" href="/blog?user={{featured_user.id}}">
     <div class="featured user">
-        <h2>Featured blogger</h2>
-        <p class="about">{{featured_user.about_me}}</p>
-        <span class="user">@{{featured_user.username}}</span>
+        <label>Featured blogger</label>
+        <div>
+            <h2 class="user">{{featured_user.username}}</h2>
+            <p class="about">{{featured_user.about_me}}</p>
+            <div class="prompt-area">
+                <span class="prompt">Visit their blog</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                    <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                </svg>
+            </div>
+        </div>
     </div>
 </a>
 {% endif %}

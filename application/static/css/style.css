@@ -445,9 +445,8 @@ a.featured-container {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 14px;
     width: 100%;
     height: clamp(250px, 25vh, 700px);
     color: var(--tertiary-color);
@@ -473,23 +472,57 @@ a.featured-container {
     box-shadow: var(--primary-shadow);
     transition: all 200ms linear;
 
-    &:hover {
-        -webkit-box-shadow: 0px 0px 12px 2px rgba(0, 172, 245, 1);
-        -moz-box-shadow: 0px 0px 12px 2px rgba(0, 172, 245, 1);
-        box-shadow: 0px 0px 12px 2px rgba(0, 172, 245, 1);
-    }
-
-    & > * {
+    & * {
         padding: 0;
         margin: 0;
     }
 
-    & > h2 {
+    & > label {
         font-family: sarabun-bold;
+        mix-blend-mode: color-dodge;
     }
 
-    & > p {
+    & > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: 14px;
+        width: 100%;
+    }
+
+    & p {
         max-width: 150ch;
+    }
+
+    svg {
+        height: 1.5em;
+        fill: var(--tertiary-color);
+        margin-bottom: -5px;
+    }
+
+    .prompt-area {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .prompt {
+        display: none;
+        transition: all 200ms linear;
+    }
+
+    &:hover {
+        -webkit-box-shadow: 0px 0px 12px 2px rgba(0, 172, 245, 1);
+        -moz-box-shadow: 0px 0px 12px 2px rgba(0, 172, 245, 1);
+        box-shadow: 0px 0px 12px 2px rgba(0, 172, 245, 1);
+
+        .prompt {
+            display: unset;
+        }
     }
 }
 
