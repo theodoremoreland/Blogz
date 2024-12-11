@@ -48,7 +48,6 @@ def render_blog():
             comments = blog_post.comments
             author_id = str(blog_post.author_id)
             user_id_in_session = str(session.get("user_id"))
-            featured_blog = blog_post[0] if blog_post else None
 
             logger.info(
                 f"Rendering blog post with blog_post_id: {blog_post_id} and author_id: {author_id} as user_id: {user_id_in_session}"
@@ -59,7 +58,6 @@ def render_blog():
                 blog_post=blog_post,
                 comments=comments,
                 is_owner=author_id == user_id_in_session,
-                featured_blog=featured_blog,
             )
         else:
             all_blog_posts = BlogPosts.query.order_by(
