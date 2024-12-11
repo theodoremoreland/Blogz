@@ -6,7 +6,7 @@ from modules.logger import logger
 
 blog = Blueprint("blog", __name__, template_folder="templates", static_folder="static")
 
-PAGE_SIZE = 5
+PAGE_SIZE = 10
 
 
 @blog.route("/blog", methods=["GET"])

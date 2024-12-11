@@ -19,9 +19,9 @@
     </div>
 </a>
 {% endif %}
-{% if users_list|length > 0 %}
+{% if users_list.items|length > 0 %}
 <ul class="users">
-    {% for user in users_list %}
+    {% for user in users_list.items %}
     <li>
         <div class="header">
             <img src="{{user.avatar_url}}" alt="{{user.username}}'s avatar" class="avatar"
@@ -41,6 +41,32 @@
     </li>
     {% endfor %}
 </ul>
+<div class="pagination-container">
+    <div
+        style="display: flex; flex-direction: row; justify-content: center; align-items: center; flex-wrap: wrap; gap: 15px">
+        <div class="page-items">
+            {{ users_list.first }} - {{ users_list.last }} of {{ users_list.total }}
+        </div>
+        <span>•</span>
+        <ol class=pagination>
+            {% for page in users_list.iter_pages() %}
+            {% if page %}
+            {% if page != users_list.page %}
+            <a href="/bloggers?page={{page}}">
+                <li class="page-number">
+                    {{ page }}
+                </li>
+            </a>
+            {% else %}
+            <li class="page-number selected">{{ page }}</li>
+            {% endif %}
+            {% else %}
+            <span class=ellipsis>…</span>
+            {% endif %}
+            {% endfor %}
+        </ol>
+    </div>
+</div>
 {% else %}
 <p class="no-users">No users found. Be the first by <a href="/signup">registering</a> for an account.</p>
 {% endif %}
