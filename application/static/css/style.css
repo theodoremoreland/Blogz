@@ -314,6 +314,54 @@ ul::-webkit-scrollbar-thumb {
     list-style: none;
 }
 
+.pagination-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    flex-grow: 1;
+    color: var(--tertiary-color);
+    padding: 15px 20px;
+    margin: 0;
+
+    ol {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    .page-number {
+        padding: 0.35rem;
+        border-radius: 4px;
+        color: var(--secondary-color);
+        background-color: var(--secondary-background-color);
+        border: var(--primary-border);
+        box-shadow: var(--primary-shadow);
+        transition: all 200ms linear;
+    }
+
+    .page-number:hover {
+        color: var(--quinary-color);
+        background-color: var(--secondary-color);
+    }
+
+    .page-number.selected {
+        font-family: sarabun-bold;
+        color: var(--quinary-color);
+        background-color: var(--secondary-color);
+    }
+}
+
 /* ------------------- LOG IN PAGE ------------------- */
 
 .page {
@@ -448,7 +496,7 @@ a.featured-container {
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    height: clamp(250px, 25vh, 700px);
+    height: clamp(475px, 25vh, 700px);
     color: var(--tertiary-color);
     font-size: larger;
     box-sizing: border-box;
@@ -523,6 +571,12 @@ a.featured-container {
         .prompt {
             display: unset;
         }
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .featured {
+        height: clamp(300px, 25vh, 700px);
     }
 }
 

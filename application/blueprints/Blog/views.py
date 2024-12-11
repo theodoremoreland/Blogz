@@ -6,6 +6,8 @@ from modules.logger import logger
 
 blog = Blueprint("blog", __name__, template_folder="templates", static_folder="static")
 
+PAGE_SIZE = 5
+
 
 @blog.route("/blog", methods=["GET"])
 def render_blog():
@@ -15,6 +17,9 @@ def render_blog():
     blog_post_id = request.args.get(
         "blog_post_id"
     )  # assigned when clicking on link to specific post or after creating post
+    page = request.args.get(
+        "page", 1, type=int
+    )  # Get the page number from the query string, default to 1
 
     logger.info(
         f"Rendering blog page with user_id: {user_id} and blog_post_id: {blog_post_id}"
@@ -24,11 +29,12 @@ def render_blog():
             user_blog = (
                 BlogPosts.query.filter_by(author_id=user_id)
                 .order_by(BlogPosts.created_at.desc())
-                .all()
+                .paginate(page=page, per_page=PAGE_SIZE)
             )
+
             user = Users.query.filter_by(id=user_id).first()
 
-            featured_blog = user_blog[0] if user_blog else None
+            featured_blog = user_blog.items[0] if user_blog else None
 
             return render_template(
                 "blog.html",
@@ -56,8 +62,10 @@ def render_blog():
                 featured_blog=featured_blog,
             )
         else:
-            all_blog_posts = BlogPosts.query.order_by(BlogPosts.created_at.desc()).all()
-            featured_blog = all_blog_posts[0] if all_blog_posts else None
+            all_blog_posts = BlogPosts.query.order_by(
+                BlogPosts.created_at.desc()
+            ).paginate(page=page, per_page=PAGE_SIZE)
+            featured_blog = all_blog_posts.items[0] if all_blog_posts else None
 
             return render_template(
                 "blog.html",

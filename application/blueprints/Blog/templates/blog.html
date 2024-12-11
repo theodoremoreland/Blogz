@@ -17,7 +17,7 @@
     </div>
     <p class="about">{{user.about_me}}</p>
     <div class="metadata">
-        <span class="post-count">Post count: {{blog|length}}</span>
+        <span class="post-count">Post count: {{blog.items|length}}</span>
         <span class="since">Member since: {{user.member_since.strftime("%B %d, %Y")}}</span>
     </div>
 </div>
@@ -50,9 +50,9 @@
     </div>
 </a>
 {% endif %}
-{% if blog|length > 0 %}
+{% if blog.items|length > 0 %}
 <ul class="blog-previews">
-    {% for blog_post in blog %}
+    {% for blog_post in blog.items %}
     <li class="blog-preview">
         <h3 class="title">
             <a href="/blog?blog_post_id={{blog_post.id}}">{{blog_post.title}}</a>
@@ -89,6 +89,38 @@
     </li>
     {% endfor %}
 </ul>
+<div class="pagination-container">
+    <div
+        style="display: flex; flex-direction: row; justify-content: center; align-items: center; flex-wrap: wrap; gap: 15px">
+        <div class="page-items">
+            {{ blog.first }} - {{ blog.last }} of {{ blog.total }}
+        </div>
+        <span>•</span>
+        <ol class=pagination>
+            {% for page in blog.iter_pages() %}
+            {% if page %}
+            {% if page != blog.page and scope == 'user' %}
+            <a href="/blog?user_id={{user.id}}&page={{page}}">
+                <li class="page-number">
+                    {{ page }}
+                </li>
+            </a>
+            {% elif page != blog.page %}
+            <a href="/blog?page={{page}}">
+                <li class="page-number">
+                    {{ page }}
+                </li>
+            </a>
+            {% else %}
+            <li class="page-number selected">{{ page }}</li>
+            {% endif %}
+            {% else %}
+            <span class=ellipsis>…</span>
+            {% endif %}
+            {% endfor %}
+        </ol>
+    </div>
+</div>
 {% elif scope == 'user' %}
 <p class="no-blog-posts">
     {{user.username}} has no blog posts.
