@@ -41,6 +41,8 @@
         #00acf51f -606%,
         #000001 70%
     );
+
+    --content-width: clamp(200px, 90%, 3840px);
 }
 
 /* ------------------- GLOBAL ------------------- */
@@ -109,7 +111,7 @@ ul::-webkit-scrollbar-thumb {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: var(--content-width);
     height: 2.8rem;
     box-sizing: border-box;
     padding: 0 20px;
@@ -251,7 +253,7 @@ ul::-webkit-scrollbar-thumb {
     box-sizing: border-box;
     margin: 0;
     padding: 5px 0;
-    width: 90%;
+    width: var(--content-width);
     min-height: 80vh;
     color: var(--quinary-color);
 }
@@ -928,7 +930,7 @@ a.featured-container {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: var(--content-width);
     height: 2.8rem;
     box-sizing: border-box;
     padding: 0 20px;
