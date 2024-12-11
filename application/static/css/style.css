@@ -583,7 +583,7 @@ a.featured-container {
 .users {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 14px;
     height: 100%;
     width: 100%;
@@ -592,7 +592,13 @@ a.featured-container {
     list-style: none;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 444px) {
+    .users {
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+}
+
+@media screen and (min-width: 1348px) {
     .users {
         grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
     }
