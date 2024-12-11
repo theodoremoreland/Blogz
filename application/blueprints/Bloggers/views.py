@@ -7,7 +7,7 @@ bloggers = Blueprint(
     "bloggers", __name__, template_folder="templates", static_folder="static"
 )
 
-PAGE_SIZE = 5
+PAGE_SIZE = 15
 
 
 @bloggers.route("/bloggers", methods=["GET"])
