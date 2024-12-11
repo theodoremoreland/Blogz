@@ -580,6 +580,16 @@ a.featured-container {
     }
 }
 
+.featured.blog {
+    .author {
+        font-size: initial;
+
+        i {
+            font-family: sarabun-italic;
+        }
+    }
+}
+
 .users {
     position: relative;
     display: grid;
