@@ -23,6 +23,7 @@ _This was originally a homework assignment for LaunchCode's Lc101 (2018)_
 -   Flask_sqlalchemy
 -   PostgreSQL
 -   HTML/CSS
+-   Jinja2
 -   Docker
 -   bcrypt
 
