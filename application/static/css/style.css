@@ -87,18 +87,18 @@ body {
 
 body::-webkit-scrollbar,
 ul::-webkit-scrollbar {
-    width: 5px;
+    width: 6px;
 }
 
 body::-webkit-scrollbar-track,
 ul::-webkit-scrollbar-track {
-    background: var(--quinary-color); /* color of the tracking area */
+    background: #222229; /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb,
 ul::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    background-color: var(--tertiary-color); /* color of the scroll thumb */
+    background-color: #c4c8ce; /* color of the scroll thumb */
 }
 
 /* ------------------- NAVIGATION ------------------- */
@@ -512,13 +512,6 @@ a.featured-container {
         rgb(0, 45, 94) 28%,
         rgb(0, 10, 15) 85%
     );
-    /* background-image: linear-gradient(
-        96deg,
-        var(--quaternary-color) 7.63%,
-        var(--primary-color) 37.94%,
-        #00d2e5 65.23%,
-        var(--secondary-color) 92.12%
-    ); */
     box-shadow: var(--primary-shadow);
     transition: all 200ms linear;
 
