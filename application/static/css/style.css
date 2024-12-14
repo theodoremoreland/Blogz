@@ -42,7 +42,7 @@
         #000001 70%
     );
 
-    --content-width: clamp(200px, 90%, 3840px);
+    --content-width: clamp(200px, 90%, 3200px);
 }
 
 /* ------------------- GLOBAL ------------------- */
