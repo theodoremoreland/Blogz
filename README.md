@@ -6,6 +6,8 @@ _This was originally a homework assignment for LaunchCode's Lc101 (2018)_
 
 <img src="presentation/thumbnail.webp" width="700">
 
+[View the web application](http://blogz.us-east-2.elasticbeanstalk.com/)
+
 # Table of contents
 
 -   [Technologies Used](#technologies-used)
