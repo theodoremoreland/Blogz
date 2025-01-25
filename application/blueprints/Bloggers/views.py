@@ -22,13 +22,18 @@ def render_bloggers_page():
         users = Users.query.order_by(Users.username).paginate(
             page=page, per_page=PAGE_SIZE
         )
+        featured_user = None
         post_count_by_user = {}
 
         for user in users.items:
             post_count = len(user.blog_posts)
             post_count_by_user[user.id] = post_count
 
-        featured_user = users.items[0] if users else None
+            if user.username == "CarlJung":
+                featured_user = user
+
+        if featured_user is None and users:
+            featured_user = users.items[0]
 
         return render_template(
             "bloggers.html",
