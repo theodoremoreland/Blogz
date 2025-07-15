@@ -1,0 +1,8 @@
+{
+  "blogz": {
+    "image": ":blogz-container-service.blogz.latest",
+    "ports": {
+      "5000": "HTTP"
+    }
+  }
+}

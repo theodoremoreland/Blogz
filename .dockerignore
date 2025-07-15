@@ -3,3 +3,5 @@
 **/*.example**
 **/*_example**
 Dockerfile
+**/*.log**
+**/*.zip**
