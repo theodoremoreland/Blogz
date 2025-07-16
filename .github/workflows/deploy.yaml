@@ -18,8 +18,9 @@ jobs:
 
       - name: Create config.cfg
         run: |
-          echo "SQLALCHEMY_DATABASE_URI = '${{ secrets.SQLALCHEMY_DATABASE_URI }}';" > application/instance/config.cfg
-          echo "SECRET_KEY = '${{ secrets.SECRET_KEY }}';" >> application/instance/config.cfg
+          mkdir -p application/instance
+          echo "SQLALCHEMY_DATABASE_URI = '${{ secrets.SQLALCHEMY_DATABASE_URI }}'" > application/instance/config.cfg
+          echo "SECRET_KEY = '${{ secrets.SECRET_KEY }}'" >> application/instance/config.cfg
 
       - name: Build Docker image
         run: docker build -t blogz:latest .
